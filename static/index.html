@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anil Dutta | FinTech & AI Web Apps Lab | Insights & Help Hub</title>
+  <meta name="description" content="Production-ready web applications, in-depth financial articles, and interactive Q&A Help desk by Anil Dutta.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              300: '#7cc5fb',
+              400: '#36a7f7',
+              500: '#0c8ce9',
+              600: '#026fc7',
+              700: '#0358a1',
+              800: '#074b85',
+              900: '#0c3f6e',
+              950: '#082849',
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200 font-sans selection:bg-brand-500 selection:text-white">
+
+  <!-- ================= TOP NOTIFICATION / SYSTEM BAR ================= -->
+  <div class="bg-gradient-to-r from-brand-900 via-indigo-900 to-slate-900 text-white text-xs py-2 px-4 border-b border-indigo-800/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+          Live Ecosystem
+        </span>
+        <span class="text-slate-300 font-medium">Anil Dutta Portfolio & Innovation Hub</span>
+        <span class="hidden md:inline text-slate-500">|</span>
+        <span class="hidden md:inline text-slate-400">4 Web Apps Online • Financial Guides • Q&A Help Desk</span>
+      </div>
+      <div class="flex items-center space-x-3 text-slate-300">
+        <span id="system-time" class="font-mono text-[11px] text-slate-400"></span>
+        <button id="admin-mode-toggle" class="flex items-center space-x-1 px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition text-[11px] border border-slate-700">
+          <i data-lucide="shield" class="w-3 h-3 text-amber-400"></i>
+          <span id="admin-mode-text">Anil Admin Mode</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN HEADER & NAVIGATION ================= -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-slate-950/85 border-b border-slate-200 dark:border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Logo / Brand -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-emerald-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+            <span class="font-bold text-lg tracking-wider">AD</span>
+          </div>
+          <div>
+            <div class="font-extrabold text-base tracking-tight text-slate-900 dark:text-white flex items-center space-x-1.5">
+              <span>ANIL DUTTA</span>
+              <span class="text-xs px-1.5 py-0.2 rounded bg-brand-100 dark:bg-brand-950/80 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 font-mono font-normal">HUB</span>
+            </div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">FinTech, AI & Quantitative Tools</div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-1 text-sm font-semibold">
+          <a href="#apps-section" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition flex items-center space-x-1.5">
+            <i data-lucide="layout-grid" class="w-4 h-4"></i>
+            <span>Web Apps</span>
+            <span id="nav-app-count" class="text-xs px-1.5 py-0.2 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono font-medium">4</span>
+          </a>
+          <a href="#articles-section" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition flex items-center space-x-1.5">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>Articles & Insights</span>
+          </a>
+          <a href="#help-section" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition flex items-center space-x-1.5">
+            <i data-lucide="help-circle" class="w-4 h-4 text-emerald-500"></i>
+            <span>HELP Desk (Q&A)</span>
+            <span class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400">Ask</span>
+          </a>
+          <a href="#about-section" class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition flex items-center space-x-1.5">
+            <i data-lucide="user-check" class="w-4 h-4"></i>
+            <span>About Anil</span>
+          </a>
+        </nav>
+
+        <!-- Right Action Controls -->
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition" title="Toggle Dark/Light Mode">
+            <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+            <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+          </button>
+
+          <!-- Post Query Quick Button -->
+          <a href="#help-section" class="hidden sm:inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white shadow-sm shadow-brand-600/30 transition transform hover:-translate-y-0.5 active:translate-y-0">
+            <i data-lucide="message-square-plus" class="w-4 h-4"></i>
+            <span>Ask a Query</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 pt-2 pb-4 space-y-1">
+      <a href="#apps-section" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-900">Web Apps Showcase</a>
+      <a href="#articles-section" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-900">Articles & Insights</a>
+      <a href="#help-section" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-900">HELP Desk (Post Query)</a>
+      <a href="#about-section" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-900">About Anil Dutta</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-slate-200/80 dark:border-slate-800/80 bg-gradient-to-b from-white via-slate-50 to-slate-100/60 dark:from-slate-950 dark:via-slate-900/60 dark:to-slate-950">
+    
+    <!-- Background subtle glow accents -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-brand-500/15 via-indigo-500/10 to-emerald-500/15 blur-3xl -z-10 rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        
+        <!-- Badge -->
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 shadow-sm mb-6">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-500"></i>
+          <span>Welcome to Anil Dutta's Digital Workbench</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+          Intelligent Web Apps.
+          <span class="block bg-gradient-to-r from-brand-600 via-indigo-500 to-emerald-500 bg-clip-text text-transparent">
+            Financial Insights & Community Answers.
+          </span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          Explore production-grade tools for UK personal finance, AI-driven career matching, and smart lifestyle management. Read curated financial research and get your queries answered directly on the HELP desk.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <a href="#apps-section" class="px-5 py-3 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white dark:bg-brand-600 dark:hover:bg-brand-500 shadow-lg shadow-slate-900/10 dark:shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+            <i data-lucide="compass" class="w-4 h-4"></i>
+            <span>Explore 4 Web Apps</span>
+          </a>
+          <a href="#articles-section" class="px-5 py-3 rounded-xl font-bold text-sm bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+            <i data-lucide="book-open" class="w-4 h-4 text-brand-500"></i>
+            <span>Read Curated Articles</span>
+          </a>
+          <a href="#help-section" class="px-5 py-3 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20 transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+            <i data-lucide="help-circle" class="w-4 h-4"></i>
+            <span>Ask a Query (HELP)</span>
+          </a>
+        </div>
+
+        <!-- Global Search / Filter Input -->
+        <div class="mt-10 max-w-xl mx-auto">
+          <div class="relative flex items-center">
+            <i data-lucide="search" class="w-5 h-5 absolute left-3.5 text-slate-400"></i>
+            <input type="text" id="global-search-input" placeholder="Search across web apps, financial articles, or Q&A queries..." 
+                   class="w-full pl-11 pr-24 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 text-slate-900 dark:text-slate-100 placeholder-slate-400">
+            <button id="global-search-clear" class="hidden absolute right-3 px-2 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-white">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats Overview Bar -->
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div class="bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center">
+            <div class="text-2xl font-black text-brand-600 dark:text-brand-400">4 Apps</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">FinTech & AI Tools</div>
+          </div>
+          <div class="bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center">
+            <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400">15+ Yrs</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">Fund Performance Data</div>
+          </div>
+          <div class="bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center">
+            <div class="text-2xl font-black text-indigo-600 dark:text-indigo-400">5+ Guides</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">Financial & Tech Articles</div>
+          </div>
+          <div class="bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center">
+            <div class="text-2xl font-black text-amber-600 dark:text-amber-400">100% Free</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">Zero Ads & Open Access</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 1: WEB APPS LAUNCHPAD ================= -->
+  <section id="apps-section" class="py-16 md:py-24 border-b border-slate-200 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-1">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Interactive Application Ecosystem</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Production Web Applications
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
+            Fully functional web platforms created by Anil Dutta. Launch each application locally or inspect its algorithmic architecture.
+          </p>
+        </div>
+
+        <!-- Filter tabs for Apps -->
+        <div class="flex flex-wrap gap-2" id="apps-filter-container">
+          <button data-filter="All" class="app-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-brand-600 text-white">All Apps (4)</button>
+          <button data-filter="FinTech & Wealth" class="app-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">FinTech & Wealth</button>
+          <button data-filter="AI & Career" class="app-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">AI & Career</button>
+          <button data-filter="Lifestyle & AI" class="app-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">Smart Living</button>
+        </div>
+      </div>
+
+      <!-- Apps Grid Container -->
+      <div id="apps-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Rendered via app.js -->
+        <div class="col-span-full py-12 text-center text-slate-500">
+          <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-brand-500 border-t-transparent"></div>
+          <div class="mt-2 text-sm">Loading applications...</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 2: ARTICLES & INSIGHTS HUB ================= -->
+  <section id="articles-section" class="py-16 md:py-24 border-b border-slate-200 dark:border-slate-800/80 bg-slate-100/40 dark:bg-slate-900/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1">
+            <i data-lucide="feather" class="w-4 h-4"></i>
+            <span>Curated Knowledge & Analysis</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Financial & Technical Articles
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
+            In-depth guides compiled by Anil Dutta on UK tax dynamics, investment mathematics, AI system engineering, and household efficiency.
+          </p>
+        </div>
+
+        <!-- Controls: Category filter & Add Article button -->
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="flex flex-wrap gap-1.5" id="articles-filter-container">
+            <button data-cat="All" class="article-cat-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-emerald-600 text-white">All Articles</button>
+            <button data-cat="Financial Strategies" class="article-cat-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700">Financial</button>
+            <button data-cat="UK Tax & Pensions" class="article-cat-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700">Tax & Pensions</button>
+            <button data-cat="AI & Tech Architecture" class="article-cat-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700">AI & Tech</button>
+          </div>
+          <button id="add-article-btn" class="hidden px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:opacity-90 transition flex items-center space-x-1">
+            <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i>
+            <span>Add Article</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Featured Articles Container -->
+      <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered via app.js -->
+        <div class="col-span-full py-12 text-center text-slate-500">
+          <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-emerald-500 border-t-transparent"></div>
+          <div class="mt-2 text-sm">Loading articles...</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 3: HELP & COMMUNITY Q&A BOARD ================= -->
+  <section id="help-section" class="py-16 md:py-24 border-b border-slate-200 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title & Invitation Banner -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 mb-3">
+          <i data-lucide="help-circle" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span>Interactive Q&A Community Desk</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          HELP Desk: Ask Anil Dutta
+        </h2>
+        <p class="mt-3 text-base text-slate-600 dark:text-slate-300">
+          Have a financial puzzle or technical software question? Post your query below! I personally analyze every question and post detailed, actionable solutions here for the community.
+        </p>
+      </div>
+
+      <!-- 2-Column Layout: Left (Submission Form), Right (Questions & Answers Feed) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Submit Query Form (4 cols on lg) -->
+        <div class="lg:col-span-5 bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none sticky top-24">
+          <div class="flex items-center space-x-2.5 pb-4 mb-5 border-b border-slate-100 dark:border-slate-800">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+              <i data-lucide="message-circle-question" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">Post Your Query</h3>
+              <p class="text-xs text-slate-500">Free • Technical or Financial • Direct Response</p>
+            </div>
+          </div>
+
+          <form id="help-query-form" class="space-y-4">
+            <div>
+              <label for="query-author" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Your Name / Alias *</label>
+              <input type="text" id="query-author" required placeholder="e.g. Alex M. or Curious Investor" 
+                     class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:outline-none text-slate-900 dark:text-slate-100 placeholder-slate-400">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label for="query-location" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Location / Region</label>
+                <input type="text" id="query-location" placeholder="e.g. London, UK" 
+                       class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:outline-none text-slate-900 dark:text-slate-100 placeholder-slate-400">
+              </div>
+              <div>
+                <label for="query-category" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Topic Category *</label>
+                <select id="query-category" required 
+                        class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:outline-none text-slate-900 dark:text-slate-100">
+                  <option value="Financial / UK Money">Financial / UK Money</option>
+                  <option value="Technical / Software Architecture">Technical / Software</option>
+                  <option value="App Feedback & Ideas">App Feedback & Ideas</option>
+                  <option value="General Query">General Query</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="query-title" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Question Summary / Title *</label>
+              <input type="text" id="query-title" required placeholder="e.g. How does salary sacrifice affect Plan 2 repayments?" 
+                     class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:outline-none text-slate-900 dark:text-slate-100 placeholder-slate-400">
+            </div>
+
+            <div>
+              <label for="query-content" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Detailed Situation / Query *</label>
+              <textarea id="query-content" rows="4" required placeholder="Describe your question or scenario in detail (e.g. salary band, pension setup, tech stack problem)..." 
+                        class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:outline-none text-slate-900 dark:text-slate-100 placeholder-slate-400"></textarea>
+            </div>
+
+            <button type="submit" id="submit-query-btn" class="w-full py-3 px-4 rounded-xl font-bold text-sm bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white shadow-lg shadow-emerald-600/25 transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Submit Query to Anil</span>
+            </button>
+            <p class="text-[11px] text-center text-slate-400 dark:text-slate-500">
+              Your question will be posted publicly to the Q&A Desk so others benefit from the answer.
+            </p>
+          </form>
+        </div>
+
+        <!-- Right: Questions and Answers Feed (7 cols on lg) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Feed Controls & Filter -->
+          <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Filter:</span>
+              <div class="flex flex-wrap gap-1" id="queries-status-filter">
+                <button data-status="All" class="query-status-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-900 dark:bg-white text-white dark:text-slate-900 transition">All</button>
+                <button data-status="Answered" class="query-status-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">Answered by Anil</button>
+                <button data-status="In Review" class="query-status-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">In Review</button>
+              </div>
+            </div>
+
+            <div class="text-xs font-semibold text-slate-500">
+              <span id="queries-count-badge">0</span> queries posted
+            </div>
+          </div>
+
+          <!-- Queries Feed List -->
+          <div id="queries-feed" class="space-y-4">
+            <!-- Rendered via app.js -->
+            <div class="py-12 text-center text-slate-500">
+              <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-emerald-500 border-t-transparent"></div>
+              <div class="mt-2 text-sm">Loading community queries...</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 4: ABOUT CREATOR & ARCHITECTURE ================= -->
+  <section id="about-section" class="py-16 md:py-24 border-b border-slate-200 dark:border-slate-800/80 bg-slate-100/30 dark:bg-slate-900/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-brand-950 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl relative overflow-hidden">
+        
+        <!-- Background accents -->
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          
+          <div class="lg:col-span-8 space-y-4">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30">
+              <i data-lucide="award" class="w-3.5 h-3.5 text-brand-400"></i>
+              <span>About the Creator & Architect</span>
+            </div>
+            
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+              Anil Dutta
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Software Engineer, FinTech Developer, and Quantitative Tools Specialist based in the UK. Passionate about designing high-performance web applications that demystify complex financial equations, optimize career search dynamics through modern LLMs, and streamline daily living through data.
+            </p>
+
+            <div class="pt-2">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Core Engineering Stack</h4>
+              <div class="flex flex-wrap gap-2 text-xs font-mono">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-brand-300 border border-slate-700">Python 3.14</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-brand-300 border border-slate-700">FastAPI & Uvicorn</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-indigo-300 border border-slate-700">Google Gemini LLM</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-emerald-300 border border-slate-700">FE fundinfo / Trustnet</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-cyan-300 border border-slate-700">Tailwind CSS</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-amber-300 border border-slate-700">Chart.js</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-pink-300 border border-slate-700">Vercel Serverless</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 bg-slate-800/60 backdrop-blur-md p-6 rounded-2xl border border-slate-700/80 space-y-4 text-center lg:text-left">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-500 to-emerald-400 flex items-center justify-center text-white text-2xl font-bold mx-auto lg:mx-0 shadow-lg">
+              AD
+            </div>
+            <div>
+              <div class="font-bold text-lg text-white">Get in Touch</div>
+              <div class="text-xs text-slate-400 mt-0.5">Collaborations, Technical Consults & Inquiries</div>
+            </div>
+            
+            <div class="space-y-2 pt-2 text-xs">
+              <a href="https://github.com/anildutta007" target="_blank" rel="noopener" class="flex items-center space-x-2 px-3 py-2 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-slate-200 hover:text-white transition border border-slate-700">
+                <i data-lucide="github" class="w-4 h-4 text-slate-400"></i>
+                <span class="font-mono">github.com/anildutta007</span>
+              </a>
+              <a href="mailto:anil.dutta@example.com" class="flex items-center space-x-2 px-3 py-2 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-slate-200 hover:text-white transition border border-slate-700">
+                <i data-lucide="mail" class="w-4 h-4 text-brand-400"></i>
+                <span>Direct Email Contact</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-white dark:bg-slate-950 text-slate-600 dark:text-slate-400 text-xs py-12 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center space-x-2 font-bold text-slate-900 dark:text-white text-sm">
+            <div class="w-6 h-6 rounded-lg bg-brand-600 text-white flex items-center justify-center text-xs">AD</div>
+            <span>Anil Dutta Portfolio & Knowledge Hub</span>
+          </div>
+          <p class="text-xs text-slate-500 max-w-md leading-relaxed">
+            A unified digital launchpad showcasing custom web applications, financial strategy calculators, research articles, and a responsive help desk. Designed for speed, precision, and privacy.
+          </p>
+          <div class="text-[11px] text-slate-400 dark:text-slate-500">
+            © 2026 Anil Dutta. All rights reserved.
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-xs uppercase tracking-wider">Web Applications</h4>
+          <ul class="space-y-1.5 text-xs">
+            <li><a href="#apps-section" class="hover:text-brand-600 dark:hover:text-brand-400 transition">UK JobMatch AI</a></li>
+            <li><a href="#apps-section" class="hover:text-brand-600 dark:hover:text-brand-400 transition">UK Funds Selection Advisor</a></li>
+            <li><a href="#apps-section" class="hover:text-brand-600 dark:hover:text-brand-400 transition">UK UniLoan Calculator</a></li>
+            <li><a href="#apps-section" class="hover:text-brand-600 dark:hover:text-brand-400 transition">SmartFridge AI Planner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-xs uppercase tracking-wider">Legal & Disclaimer</h4>
+          <p class="text-[11px] text-slate-400 leading-normal">
+            <strong>Important Notice:</strong> Content and tools hosted on this portal are created strictly for educational, informational, and software demonstration purposes. They do not constitute regulated financial, legal, or investment advice under the UK FCA.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL 1: APP DEEP DIVE / ARCHITECTURE ================= -->
+  <div id="app-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 w-full max-w-3xl rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div id="modal-app-icon" class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-600 flex items-center justify-center"></div>
+          <div>
+            <h3 id="modal-app-title" class="font-extrabold text-xl text-slate-900 dark:text-white"></h3>
+            <p id="modal-app-tagline" class="text-xs text-slate-500"></p>
+          </div>
+        </div>
+        <button id="close-app-modal" class="p-2 rounded-xl text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-6 text-sm">
+        <div>
+          <h4 class="font-bold text-xs uppercase tracking-wider text-slate-500 mb-1.5">Overview</h4>
+          <p id="modal-app-summary" class="text-slate-700 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-xs uppercase tracking-wider text-slate-500 mb-2">Key Engineering Features</h4>
+          <ul id="modal-app-highlights" class="space-y-2 text-slate-700 dark:text-slate-300"></ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-xs uppercase tracking-wider text-slate-500 mb-2">Technology Architecture</h4>
+          <div id="modal-app-tech" class="flex flex-wrap gap-1.5 font-mono text-xs"></div>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-slate-500 mb-1">Local Run Command</h4>
+          <div class="flex items-center justify-between font-mono text-xs text-brand-600 dark:text-brand-400">
+            <span id="modal-app-bat"></span>
+            <span id="modal-app-port" class="text-slate-400"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-end space-x-3">
+        <a id="modal-app-github" href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition flex items-center space-x-1.5">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub</span>
+        </a>
+        <a id="modal-app-launch" href="#" target="_blank" rel="noopener" class="px-5 py-2 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-md shadow-brand-600/20 transition flex items-center space-x-1.5">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span>Launch Web App</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 2: ARTICLE READER ================= -->
+  <div id="article-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 w-full max-w-4xl rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <div>
+          <div class="flex items-center space-x-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1">
+            <span id="modal-article-category"></span>
+            <span>•</span>
+            <span id="modal-article-readtime" class="text-slate-500"></span>
+          </div>
+          <h3 id="modal-article-title" class="font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white leading-tight"></h3>
+        </div>
+        <button id="close-article-modal" class="p-2 rounded-xl text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto">
+        <div class="flex items-center space-x-3 pb-6 mb-6 border-b border-slate-100 dark:border-slate-800 text-xs text-slate-500">
+          <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">AD</div>
+          <div>
+            <div class="font-bold text-slate-900 dark:text-white" id="modal-article-author">Anil Dutta</div>
+            <div id="modal-article-date">Published 2026</div>
+          </div>
+        </div>
+
+        <div id="modal-article-body" class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 leading-relaxed">
+          <!-- Article Markdown / HTML -->
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-between text-xs text-slate-500">
+        <div>Compiled by Anil Dutta • For educational & informational analysis</div>
+        <button id="copy-article-link" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 flex items-center space-x-1.5">
+          <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+          <span>Share Article</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 3: ADMIN ANSWER QUERY ================= -->
+  <div id="answer-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 w-full max-w-2xl rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Anil Admin Desk</span>
+          <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">Respond to Query</h3>
+        </div>
+        <button id="close-answer-modal" class="p-2 rounded-xl text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div class="font-bold text-sm text-slate-900 dark:text-white" id="admin-target-query-title"></div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-1" id="admin-target-query-question"></p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Your Detailed Solution / Response *</label>
+          <textarea id="admin-answer-text" rows="6" placeholder="Provide mathematical analysis, algorithmic code, or financial explanation..." 
+                    class="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none text-slate-900 dark:text-slate-100"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end space-x-3 pt-2">
+          <button id="admin-cancel-answer" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">Cancel</button>
+          <button id="admin-submit-answer" class="px-5 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-md">Publish Answer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-2xl bg-slate-900 text-white text-xs font-semibold shadow-2xl border border-slate-800 flex items-center space-x-2 transition-all transform translate-y-2">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-message">Action successful!</span>
+  </div>
+
+  <!-- Core Javascript Application -->
+  <script src="app.js"></script>
+</body>
+</html>

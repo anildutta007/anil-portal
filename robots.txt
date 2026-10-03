@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anil-portal.vercel.app/sitemap.xml

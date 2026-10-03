@@ -1,0 +1,58 @@
+[
+  {
+    "id": "q-101",
+    "authorName": "Oliver H.",
+    "authorLocation": "London, UK",
+    "category": "Financial / UK Money",
+    "title": "Should I make voluntary lump-sum overpayments on my Plan 2 student loan earning £68,000?",
+    "question": "I currently earn £68,000 in London with a remaining Plan 2 student loan balance of around £44,000. My parents suggested I pay it off early to avoid the 7%+ interest accumulation. Is this mathematically sound, or am I better off investing into a Stocks & Shares ISA?",
+    "status": "Answered",
+    "submittedAt": "2026-10-02T14:30:00Z",
+    "answer": "Great question Oliver. On Plan 2 at £68,000 salary, your mandatory repayment is 9% of income above £27,295 (£3,663/year). Because of interest (RPI + up to 3%), your £44k debt is growing by ~£3,000+ each year in interest alone! At this repayment rate, you will likely pay on the loan for nearly 20+ years before it clears, meaning a voluntary overpayment DOES save you real money IF your career progression stays at or above £68k.\n\nHowever, before overpaying, consider two critical factors:\n1. Cash liquidity: once you pay SLC, you cannot borrow that money back for a home deposit.\n2. Expected market returns: a global equity index ISA has historically returned 7-9% nominal compound growth with full tax-free liquidity.\n\nUse my UK Student Loan Calculator tool on this portal to run your exact career trajectory!",
+    "answeredAt": "2026-10-02T18:15:00Z",
+    "answeredBy": "Anil Dutta",
+    "upvotes": 14
+  },
+  {
+    "id": "q-102",
+    "authorName": "Priya M.",
+    "authorLocation": "Manchester, UK",
+    "category": "Technical / Software Architecture",
+    "title": "How do you handle API rate limits and token costs when building CV parser agents?",
+    "question": "I'm developing an AI resume scanner using Gemini Flash, but when batch processing or when users test frequently, token costs and rate limits become a concern. How did you optimize UK JobMatch AI?",
+    "status": "Answered",
+    "submittedAt": "2026-09-29T10:15:00Z",
+    "answer": "Hi Priya! In UK JobMatch AI, I implemented a two-stage hybrid filter:\n\n1. Stage 1 uses purely local Python text processing (regex, keyword frequency, title matching, and TF-IDF style scoring) to eliminate 80% of irrelevant job postings before touching any LLM.\n2. Stage 2 only sends the top candidate matches (e.g. top 5-10 jobs) to Google Gemini Flash.\n\nFurthermore, we extract skills once and cache the structured JSON representation of the CV, rather than passing raw multi-page text repeatedly. This dropped our token usage by 85% and easily keeps the app within Google AI Studio's free tier limits!",
+    "answeredAt": "2026-09-30T09:40:00Z",
+    "answeredBy": "Anil Dutta",
+    "upvotes": 9
+  },
+  {
+    "id": "q-103",
+    "authorName": "David T.",
+    "authorLocation": "Edinburgh, UK",
+    "category": "Financial / UK Money",
+    "title": "Maximizing higher-rate pension tax relief with a variable bonus",
+    "question": "My base salary is £55k, but I receive a discretionary year-end bonus of ~£20k taking me to £75k. How should I approach salary sacrifice into a SIPP vs workplace pension?",
+    "status": "Answered",
+    "submittedAt": "2026-09-25T11:20:00Z",
+    "answer": "Hello David. If your employer offers salary sacrifice (Bonus Sacrifice), that is almost always superior to a personal SIPP contribution because you save both the 40% higher rate Income Tax AND 2% employee National Insurance (plus your employer may also pass on part of their 13.8%/15% employer NI savings into your pension pot!).\n\nIf salary sacrifice isn't available, contributing into a personal SIPP gives you 20% basic tax relief credited automatically, and you claim the remaining 20% back via your Self Assessment tax return or HMRC PAYE tax code adjustment.",
+    "answeredAt": "2026-09-26T12:00:00Z",
+    "answeredBy": "Anil Dutta",
+    "upvotes": 12
+  },
+  {
+    "id": "q-104",
+    "authorName": "Sophie L.",
+    "authorLocation": "Bristol, UK",
+    "category": "Technical / Software Architecture",
+    "title": "Deploying FastAPI apps with static frontends to Vercel Serverless",
+    "question": "I noticed all your apps have vercel.json configurations. What is the cleanest folder structure to keep local development running on uvicorn while allowing Vercel to route API calls and serve static HTML without build errors?",
+    "status": "In Review",
+    "submittedAt": "2026-10-03T16:45:00Z",
+    "answer": "",
+    "answeredAt": "",
+    "answeredBy": "",
+    "upvotes": 5
+  }
+]

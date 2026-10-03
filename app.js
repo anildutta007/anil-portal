@@ -28,6 +28,7 @@ const FALLBACK_APPS = [
     badge: "AI Agent",
     status: "Production Ready",
     port: 8000,
+    liveUrl: "https://uk-jobmatch-ai.vercel.app",
     localUrl: "http://127.0.0.1:8000",
     githubUrl: "https://github.com/anildutta007/uk-jobmatch-ai",
     summary: "An intelligent web application tailored specifically for the UK job market. Users upload resumes (PDF, DOCX, TXT) and Google Gemini LLM extracts core competencies, queries live UK job listings across London and major regions, and delivers strict 10-point fit scoring with skill gaps and interview prep advice.",
@@ -52,6 +53,7 @@ const FALLBACK_APPS = [
     badge: "FinTech Lab",
     status: "Production Ready",
     port: 8080,
+    liveUrl: "https://uk-funds-advisor.vercel.app",
     localUrl: "http://127.0.0.1:8080",
     githubUrl: "https://github.com/anildutta007/uk-funds-advisor",
     summary: "An institutional-grade UK fund screener and portfolio analytics workbench built on FE fundinfo Trustnet multi-house data. Features 15-year annual calendar returns, Alpha, FE Crown ratings, Ongoing Charges Figures (OCF), and benchmark comparisons across premier UK asset managers.",
@@ -76,6 +78,7 @@ const FALLBACK_APPS = [
     badge: "UK Personal Finance",
     status: "Production Ready",
     port: 8060,
+    liveUrl: "https://uk-student-loan-calculator.vercel.app",
     localUrl: "http://127.0.0.1:8060",
     githubUrl: "https://github.com/anildutta007/uk-student-loan-calculator",
     summary: "The definitive England & Wales student loan lifetime simulator. Analyzes take-home payslips with Income Tax, NI, and student loans, models the Plan 2 vs Plan 5 marginal tax wedge, and compares early loan payoff against global equity index investing over 30 to 40 years.",
@@ -100,6 +103,7 @@ const FALLBACK_APPS = [
     badge: "Smart Living",
     status: "Production Ready",
     port: 8050,
+    liveUrl: "https://smart-fridge-planner.vercel.app",
     localUrl: "http://127.0.0.1:8050",
     githubUrl: "https://github.com/anildutta007/smart-fridge-planner",
     summary: "An intelligent household culinary and inventory management platform. Tracks freshness dates of fridge and pantry staples, automatically suggests delicious recipes prioritized by expiring ingredients, generates smart shopping lists, and cuts grocery expenditure.",
@@ -272,9 +276,20 @@ function renderApps() {
           <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
             ${app.title}
           </h3>
-          <p class="text-xs sm:text-sm font-semibold text-brand-600 dark:text-brand-400 mt-1 mb-3">
+          <p class="text-xs sm:text-sm font-semibold text-brand-600 dark:text-brand-400 mt-1 mb-2">
             ${app.tagline}
           </p>
+
+          <!-- Live Web App URL Display -->
+          ${app.liveUrl ? `
+            <div class="mb-3">
+              <a href="${app.liveUrl}" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:underline transition border border-slate-200/80 dark:border-slate-700/60" title="Visit Live Web Application">
+                <i data-lucide="globe" class="w-3.5 h-3.5 text-emerald-500"></i>
+                <span>${app.liveUrl.replace(/^https?:\/\//, '')}</span>
+                <i data-lucide="arrow-up-right" class="w-3 h-3 text-slate-400"></i>
+              </a>
+            </div>
+          ` : ''}
 
           <!-- Summary -->
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5 line-clamp-3">
@@ -308,7 +323,7 @@ function renderApps() {
             <span>GitHub</span>
           </a>
 
-          <a href="${app.localUrl}" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-md shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-1.5">
+          <a href="${app.liveUrl || app.localUrl}" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-md shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-1.5">
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             <span>Launch Web App</span>
           </a>

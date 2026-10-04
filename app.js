@@ -53,7 +53,7 @@ const FALLBACK_APPS = [
     badge: "FinTech Lab",
     status: "Production Ready",
     port: 8080,
-    liveUrl: "https://uk-funds-advisor.vercel.app",
+    liveUrl: "https://uk-funds-advisor.vercel.app/",
     localUrl: "http://127.0.0.1:8080",
     githubUrl: "https://github.com/anildutta007/uk-funds-advisor",
     summary: "An institutional-grade UK fund screener and portfolio analytics workbench built on FE fundinfo Trustnet multi-house data. Features 15-year annual calendar returns, Alpha, FE Crown ratings, Ongoing Charges Figures (OCF), and benchmark comparisons across premier UK asset managers.",
@@ -78,7 +78,7 @@ const FALLBACK_APPS = [
     badge: "UK Personal Finance",
     status: "Production Ready",
     port: 8060,
-    liveUrl: "https://uk-student-loan-calculator.vercel.app",
+    liveUrl: "https://www.ukstudentloancalculator.co.uk/",
     localUrl: "http://127.0.0.1:8060",
     githubUrl: "https://github.com/anildutta007/uk-student-loan-calculator",
     summary: "The definitive England & Wales student loan lifetime simulator. Analyzes take-home payslips with Income Tax, NI, and student loans, models the Plan 2 vs Plan 5 marginal tax wedge, and compares early loan payoff against global equity index investing over 30 to 40 years.",
@@ -119,6 +119,31 @@ const FALLBACK_APPS = [
     accentColor: "from-purple-600 to-pink-600",
     statLabel: "Household Savings",
     statValue: "Up to £120/mo"
+  },
+  {
+    id: "landlord-licensing",
+    title: "UK Landlord Licensing & Compliance Hub",
+    tagline: "Selective Licensing, Redbridge 35-Condition Audit & PDF Legal Generator",
+    category: "FinTech & Wealth",
+    badge: "PropTech & Law",
+    status: "Production Ready",
+    port: 8080,
+    liveUrl: "https://uk-landlord-licensing.vercel.app",
+    localUrl: "http://127.0.0.1:8080",
+    githubUrl: "https://github.com/anildutta007/uk-landlord-licensing",
+    summary: "A specialized UK Buy-to-Let compliance portal for Selective Licensing (Housing Act 2004 Part 3), council inspections, and statutory documentation. Features all 35 statutory conditions, 28-day & 7-day deadline tracking, civil penalty exposure calculators, and instant generation of 7 official legal PDF templates.",
+    highlights: [
+      "Full 35-condition Selective Licensing schedule (Redbridge benchmark)",
+      "7 official PDF legal templates (6-Month Inspection, Safety Declarations, ASB Warning, Agent Deed)",
+      "Statutory countdown engine for 7-day, 28-day, and 30-day council triggers",
+      "Financial enforcement & civil penalty (£30k/breach) risk assessment"
+    ],
+    techStack: ["JavaScript", "Tailwind CSS", "html2pdf.js", "Housing Act 2004", "Vercel"],
+    batFile: "run_local.bat",
+    icon: "shield-check",
+    accentColor: "from-emerald-600 to-teal-700",
+    statLabel: "Licensing Conditions",
+    statValue: "35 Mandatory"
   }
 ];
 

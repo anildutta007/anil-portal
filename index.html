@@ -50,23 +50,24 @@
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200 font-sans selection:bg-brand-500 selection:text-white">
 
-  <!-- ================= TOP NOTIFICATION / SYSTEM BAR ================= -->
-  <div class="bg-gradient-to-r from-brand-900 via-indigo-900 to-slate-900 text-white text-xs py-2 px-4 border-b border-indigo-800/40">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center space-x-2">
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
-          Live Ecosystem
+  <!-- ================= TOP LEGAL DISCLAIMER BAR (SINGLE DISCLAIMER ON SITE) ================= -->
+  <aside class="bg-amber-500/10 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 text-xs py-2.5 px-4 border-b border-amber-300/40 dark:border-amber-800/40">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center space-x-2 text-center sm:text-left">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 uppercase tracking-wide flex-shrink-0">
+          <i data-lucide="shield-alert" class="w-3 h-3 mr-1 inline"></i>
+          Disclaimer
         </span>
-        <span class="text-slate-300 font-medium">Anil Dutta Portfolio & Innovation Hub</span>
-        <span class="hidden md:inline text-slate-500">|</span>
-        <span class="hidden md:inline text-slate-400">3 Live Web Applications Online</span>
+        <span class="text-[11px] sm:text-xs text-slate-700 dark:text-slate-300">
+          <strong>Educational & Simulation Purposes Only:</strong> Tools on this website are independent self-study models. They do not constitute financial (FCA), tax, or legal advice. Anil Dutta accepts zero liability.
+        </span>
       </div>
-      <div class="flex items-center space-x-3 text-slate-300">
-        <span id="system-time" class="font-mono text-[11px] text-slate-400"></span>
-      </div>
+      <button onclick="openLegalModal()" class="font-bold underline text-brand-600 dark:text-brand-400 hover:text-brand-500 whitespace-nowrap text-[11px] flex-shrink-0 flex items-center space-x-1">
+        <span>Full Legal Terms & Waiver</span>
+        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+      </button>
     </div>
-  </div>
+  </aside>
 
   <!-- ================= MAIN HEADER & NAVIGATION ================= -->
   <header class="sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-slate-950/85 border-b border-slate-200 dark:border-slate-800/80 transition-colors">
@@ -93,10 +94,6 @@
             <span>Web Applications</span>
             <span id="nav-app-count" class="text-xs px-2 py-0.5 rounded-full bg-brand-600 text-white font-mono font-bold">3</span>
           </a>
-          <button onclick="openLegalModal()" class="px-3 py-2 rounded-lg text-amber-700 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40 transition flex items-center space-x-1.5 text-xs font-bold border border-amber-300/60 dark:border-amber-700/50">
-            <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
-            <span>Legal Disclaimer</span>
-          </button>
         </nav>
 
         <!-- Right Action Controls -->
@@ -120,10 +117,6 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 pt-2 pb-4 space-y-2">
       <a href="#apps-section" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-900">Web Applications (3)</a>
-      <button onclick="openLegalModal()" class="w-full text-left px-3 py-2 rounded-lg text-amber-700 dark:text-amber-400 font-bold hover:bg-amber-50 dark:hover:bg-amber-950/40 text-xs flex items-center space-x-1.5">
-        <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
-        <span>Important Legal Disclaimer</span>
-      </button>
     </div>
   </header>
 
@@ -156,15 +149,11 @@
         </p>
 
         <!-- CTAs -->
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-          <a href="#apps-section" class="px-6 py-3.5 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white dark:bg-brand-600 dark:hover:bg-brand-500 shadow-lg shadow-slate-900/10 dark:shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+        <div class="mt-8 flex items-center justify-center">
+          <a href="#apps-section" class="px-7 py-3.5 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white dark:bg-brand-600 dark:hover:bg-brand-500 shadow-lg shadow-slate-900/10 dark:shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-2">
             <i data-lucide="compass" class="w-4 h-4"></i>
-            <span>Explore 3 Web Apps</span>
+            <span>Explore 3 Web Applications</span>
           </a>
-          <button onclick="openLegalModal()" class="px-5 py-3.5 rounded-xl font-bold text-sm bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 hover:bg-amber-100 dark:hover:bg-amber-900/50 transition flex items-center space-x-2">
-            <i data-lucide="shield-alert" class="w-4 h-4"></i>
-            <span>Educational Disclaimer</span>
-          </button>
         </div>
 
         <!-- Global Search / Filter Input -->
@@ -199,78 +188,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PROMINENT LEGAL DISCLAIMER NOTICE (VISIBLE TO ALL) ================= -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-    <div class="bg-gradient-to-r from-amber-50 via-amber-50/50 to-orange-50 dark:from-amber-950/30 dark:via-slate-900 dark:to-orange-950/30 border-2 border-amber-300 dark:border-amber-700/60 rounded-3xl p-6 sm:p-8 shadow-md">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 mb-4 border-b border-amber-200 dark:border-amber-800/60">
-        <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
-            <i data-lucide="shield-alert" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <h2 class="text-base sm:text-lg font-black tracking-tight text-slate-900 dark:text-white uppercase">
-              Mandatory Legal & Educational Disclaimer Notice
-            </h2>
-            <p class="text-xs font-bold text-amber-800 dark:text-amber-400">
-              STRICTLY FOR EDUCATIONAL SIMULATION & INFORMATIONAL PURPOSES ONLY • NOT REGULATED ADVICE
-            </p>
-          </div>
-        </div>
-        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-amber-200 dark:bg-amber-900/80 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 uppercase tracking-wider self-start lg:self-center">
-          Zero Professional Liability
-        </span>
-      </div>
-
-      <div class="text-xs sm:text-[13px] text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
-        <p>
-          The tools and information made available on this website and linked domains are independent computational projects developed by <strong>Anil Dutta</strong> strictly for <strong>educational self-study, scenario modeling, and research exploration</strong>.
-        </p>
-
-        <!-- 3 Specific Category Disclaimers -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-1">
-          <div class="bg-white/90 dark:bg-slate-900/80 p-4 rounded-2xl border border-amber-200 dark:border-amber-800/40">
-            <div class="flex items-center space-x-2 font-black text-slate-900 dark:text-white text-xs mb-1.5">
-              <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500"></i>
-              <span>No Financial Advice (FCA)</span>
-            </div>
-            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
-              <strong>Not authorized by the UK Financial Conduct Authority (FCA).</strong> Fund performance data (Trustnet / FE fundinfo) is historical and does not guarantee future returns. Calculations do not constitute financial advice or investment recommendations. Seek advice from an FCA-regulated Independent Financial Adviser (IFA).
-            </p>
-          </div>
-
-          <div class="bg-white/90 dark:bg-slate-900/80 p-4 rounded-2xl border border-amber-200 dark:border-amber-800/40">
-            <div class="flex items-center space-x-2 font-black text-slate-900 dark:text-white text-xs mb-1.5">
-              <i data-lucide="calculator" class="w-4 h-4 text-amber-500"></i>
-              <span>No Tax or Loan Warranty</span>
-            </div>
-            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
-              <strong>Not tax or debt advice.</strong> Student loan projections and payslip breakdowns are mathematical estimates based on current published UK Student Loans Company (SLC) and HMRC thresholds. Policies, thresholds, and interest rules are subject to statutory alteration. Consult a certified accountant.
-            </p>
-          </div>
-
-          <div class="bg-white/90 dark:bg-slate-900/80 p-4 rounded-2xl border border-amber-200 dark:border-amber-800/40">
-            <div class="flex items-center space-x-2 font-black text-slate-900 dark:text-white text-xs mb-1.5">
-              <i data-lucide="scale" class="w-4 h-4 text-indigo-500"></i>
-              <span>No Legal Representation</span>
-            </div>
-            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
-              <strong>Not legal advice or tenancy deeds.</strong> Licensing checklists and PDF document templates under the Housing Act 2004 are general self-help samples only. Council conditions vary across boroughs and require independent local authority verification. Consult a qualified solicitor or chartered surveyor.
-            </p>
-          </div>
-        </div>
-
-        <div class="pt-3 border-t border-amber-200 dark:border-amber-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600 dark:text-slate-400">
-          <p class="font-semibold">
-            <strong>Limitation of Liability:</strong> You acknowledge that you use these tools entirely at your own risk. Anil Dutta and this platform accept zero liability for any direct, indirect, consequential, financial, or legal losses or penalties arising from reliance upon these tools.
-          </p>
-          <button onclick="openLegalModal()" class="flex-shrink-0 font-bold underline text-brand-600 dark:text-brand-400 hover:text-brand-500 text-xs">
-            Read Full Legal Terms & Liability Waiver &rarr;
-          </button>
-        </div>
       </div>
     </div>
   </section>

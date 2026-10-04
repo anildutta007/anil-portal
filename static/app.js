@@ -15,7 +15,7 @@ const FALLBACK_APPS = [
   {
     id: "student-loan-calculator",
     title: "UK University Fee & Student Loan Calculator",
-    tagline: "Plan 2, Plan 5 & Postgrad Repayment & Opportunity Cost Lab",
+    tagline: "Plan 2, Plan 5 & Should Parents Pay Tuition? Simulator",
     category: "FinTech & Wealth",
     badge: "University Finance",
     status: "Production Ready",
@@ -23,13 +23,14 @@ const FALLBACK_APPS = [
     liveUrl: "https://www.ukstudentloancalculator.co.uk/",
     localUrl: "http://127.0.0.1:8060",
     githubUrl: "https://github.com/anildutta007/uk-student-loan-calculator",
-    summary: "The definitive England & Wales student loan lifetime simulator. Analyzes take-home payslips with Income Tax, NI, and student loans, models the Plan 2 vs Plan 5 marginal tax wedge, and compares early loan payoff against global equity index investing over 30 to 40 years.",
+    summary: "If your son or daughter is heading to university, your first instinct as a parent might be to pay tuition fees upfront or help pay down their student loan so they don't start adult life in debt. However, UK student finance doesn't work like a bank loan.",
+    highlightsHeader: "Parent Financial Reality Check:",
     highlights: [
-      "**Actual Monthly Payslip Impact:** Breaks down your gross salary into Income Tax, National Insurance (8%), Student Loan (9%), and your exact net monthly take-home pay.",
-      "**Plan 2 vs Plan 5:** Covers course start dates (Pre-Aug 2023 vs Post-Aug 2023 for England, and Wales staying on Plan 2), writing off after 30 vs 40 years.",
-      "**Updated for 2026/27 GOV.UK figures:** Uses the current £29,385 Plan 2 threshold, £25k Plan 5 threshold, £21k Postgraduate threshold, and the official 4.1% interest / 6.0% caps.",
-      "**Lifetime 30- & 40-Year Projection:** Tracks whether you actually clear the debt or have it wiped by the government, plus a full year-by-year breakdown with CSV export.",
-      "**The 'Should Parents Pay Tuition?' Simulator:** Many parents consider paying £9,250/yr tuition upfront. The calculator compares paying fees vs investing the same money in an ISA at 3%, 4%, and 5% compound growth. (In many typical graduate career paths, paying tuition upfront saves £0 in student monthly deductions and simply hands cash to HMRC because the loan gets cancelled anyway)."
+      "**Student loans are repaid strictly as a 9% tax** on earnings above the threshold (£25k for Plan 5, £29k for Plan 2).",
+      "**Paying upfront does not reduce monthly payments by even £1** unless their salary is exceptionally high — remaining debt is wiped out after 30 or 40 years.",
+      "**The £70,000+ ISA Deposit Alternative:** Keeping that £27,750 in a Stocks & Shares ISA compounding at 5% can grow into £70,000+ for their first home deposit.",
+      "**Model your child's expected career path:** See whether paying fees makes financial sense for your specific graduate before handing cash to HMRC.",
+      "**100% Free & Updated:** No sign-up, no ads, updated with official 2026/27 Student Finance England rules."
     ],
     techStack: ["Python", "FastAPI", "Tailwind CSS", "Chart.js", "Pydantic"],
     batFile: "run_loan_calculator.bat",

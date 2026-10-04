@@ -7,10 +7,9 @@ An executive digital workbench and launchpad uniting all web applications built 
 ## 🌟 Ecosystem Overview
 
 1. **Web Apps Launchpad**:
-   - **UK JobMatch AI** (Port 8000): Intelligent Google Gemini agent parsing resumes, searching live UK opportunities across London/regions, and scoring matches out of 10.
+   - **UK University Fee & Student Loan Calculator** (Port 8060): England & Wales student loan lifetime simulator (Plan 2 vs Plan 5), marginal tax wedge breakdown, and parent opportunity cost modeling.
    - **Dutta UK Funds Selection Advisor** (Port 8080): Institutional Trustnet FE fundinfo analyzer with 15-year annual calendar returns, Alpha, FE Crown ratings, and ISA/SIPP modeling.
-   - **UK UniLoan & Parental Contribution Calculator** (Port 8060): England & Wales student loan lifetime simulator (Plan 2 vs Plan 5), marginal tax wedge breakdown, and parent opportunity cost modeling.
-   - **SmartFridge AI Meal Planner** (Port 8050): Zero-waste inventory and meal planning engine tracking shelf-life and generating dynamic recipes from expiring fridge staples.
+   - **UK Landlord & Tenant Compliance Hub** (Port 8070): Specialized compliance portal for Selective Licensing (Housing Act 2004 Part 3), council 35-condition checklist audits, occupancy standards, and downloadable legal PDF documents.
 
 2. **Articles & Insights (Knowledge Base)**:
    - Deep-dive guides compiled by Anil on UK tax structures, student loans, SIPP vs ISA mathematics, 15-year fund alpha persistence, and cost-optimized AI agent architecture.

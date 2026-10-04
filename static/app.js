@@ -21,29 +21,29 @@ const state = {
 // Fallback data in case server API is offline or loaded via file:// protocol
 const FALLBACK_APPS = [
   {
-    id: "jobmatch-ai",
-    title: "UK JobMatch AI",
-    tagline: "Gemini-Powered CV Parsing & UK Job Search Agent",
-    category: "AI & Career",
-    badge: "AI Agent",
+    id: "student-loan-calculator",
+    title: "UK University Fee & Student Loan Calculator",
+    tagline: "Plan 2, Plan 5 & Postgrad Repayment & Opportunity Cost Lab",
+    category: "FinTech & Wealth",
+    badge: "University Finance",
     status: "Production Ready",
-    port: 8000,
-    liveUrl: "https://uk-jobmatch-ai.vercel.app",
-    localUrl: "http://127.0.0.1:8000",
-    githubUrl: "https://github.com/anildutta007/uk-jobmatch-ai",
-    summary: "An intelligent web application tailored specifically for the UK job market. Users upload resumes (PDF, DOCX, TXT) and Google Gemini LLM extracts core competencies, queries live UK job listings across London and major regions, and delivers strict 10-point fit scoring with skill gaps and interview prep advice.",
+    port: 8060,
+    liveUrl: "https://www.ukstudentloancalculator.co.uk/",
+    localUrl: "http://127.0.0.1:8060",
+    githubUrl: "https://github.com/anildutta007/uk-student-loan-calculator",
+    summary: "The definitive England & Wales student loan and university finance simulator. Analyzes tuition fees, take-home payslips with Income Tax, NI, and student loans, models the Plan 2 vs Plan 5 marginal tax wedge, and compares early loan payoff against global equity index investing over 30 to 40 years.",
     highlights: [
-      "Gemini 2.5 Flash intelligence for role alignment & skill matching",
-      "Live UK job aggregation (London, Manchester, Birmingham, Edinburgh, Remote)",
-      "Strict scoring out of 10 with transparent rationale & gap identification",
-      "Zero-cost architecture with two-stage local pre-filtering reducing LLM tokens by 80%"
+      "Comprehensive Plan 2 (30-yr / £27,295) vs Plan 5 (40-yr / £25,000) simulation",
+      "Salary sacrifice pension impact on graduate tax deductions",
+      "Parental contribution vs Global Equity S&P/MSCI investment opportunity cost",
+      "Lifetime balance write-off and total cost-to-graduate modeling"
     ],
-    techStack: ["Python", "FastAPI", "Google Gemini 2.5", "Tailwind CSS", "Uvicorn"],
-    batFile: "run.bat",
-    icon: "sparkles",
-    accentColor: "from-blue-600 to-indigo-600",
-    statLabel: "Scoring Calibration",
-    statValue: "10-Point Scale"
+    techStack: ["Python", "FastAPI", "Tailwind CSS", "Chart.js", "Pydantic"],
+    batFile: "run_loan_calculator.bat",
+    icon: "calculator",
+    accentColor: "from-amber-600 to-orange-600",
+    statLabel: "Simulation Horizon",
+    statValue: "Up to 40 Years"
   },
   {
     id: "funds-advisor",
@@ -53,7 +53,7 @@ const FALLBACK_APPS = [
     badge: "FinTech Lab",
     status: "Production Ready",
     port: 8080,
-    liveUrl: "https://uk-funds-advisor.vercel.app",
+    liveUrl: "https://uk-funds-advisor.vercel.app/",
     localUrl: "http://127.0.0.1:8080",
     githubUrl: "https://github.com/anildutta007/uk-funds-advisor",
     summary: "An institutional-grade UK fund screener and portfolio analytics workbench built on FE fundinfo Trustnet multi-house data. Features 15-year annual calendar returns, Alpha, FE Crown ratings, Ongoing Charges Figures (OCF), and benchmark comparisons across premier UK asset managers.",
@@ -71,54 +71,29 @@ const FALLBACK_APPS = [
     statValue: "15+ Years Calendar"
   },
   {
-    id: "student-loan-calculator",
-    title: "UK UniLoan & Parental Contribution Calculator",
-    tagline: "Plan 2, Plan 5 & Postgrad Repayment & Opportunity Cost Lab",
-    category: "FinTech & Wealth",
-    badge: "UK Personal Finance",
+    id: "landlord-licensing",
+    title: "UK Landlord & Tenant Compliance Hub",
+    tagline: "Selective Licensing, HMO Standards & Statutory Legal Notices",
+    category: "Property & Legal",
+    badge: "Property Compliance",
     status: "Production Ready",
-    port: 8060,
-    liveUrl: "https://uk-student-loan-calculator.vercel.app",
-    localUrl: "http://127.0.0.1:8060",
-    githubUrl: "https://github.com/anildutta007/uk-student-loan-calculator",
-    summary: "The definitive England & Wales student loan lifetime simulator. Analyzes take-home payslips with Income Tax, NI, and student loans, models the Plan 2 vs Plan 5 marginal tax wedge, and compares early loan payoff against global equity index investing over 30 to 40 years.",
+    port: 8070,
+    liveUrl: "https://uk-landlord-licensing.vercel.app",
+    localUrl: "http://127.0.0.1:8070",
+    githubUrl: "https://github.com/anildutta007/uk-landlord-licensing",
+    summary: "A professional compliance and audit management portal for UK Buy-to-Let landlords, tenants, and letting agents. Built to manage Selective Licensing (Housing Act 2004 Part 3), council 35-condition checklist audits, occupancy limits, ASB warnings, and instant generation of official legal PDF documents.",
     highlights: [
-      "Comprehensive Plan 2 (30-yr / £27,295) vs Plan 5 (40-yr / £25,000) simulation",
-      "Salary sacrifice pension impact on student loan repayments",
-      "Parental contribution vs Global Equity S&P/MSCI investment opportunity cost",
-      "Lifetime balance write-off and total cost-to-graduate modeling"
+      "35-Condition Master Statutory Council Checklist Tracker",
+      "Instant downloadable official PDF legal documents (Inspections, ASB notices, Deeds)",
+      "Multi-Council & Property preset switcher (Redbridge, Newham, Generic UK)",
+      "100% private client-side storage with penalty exposure calculator"
     ],
-    techStack: ["Python", "FastAPI", "Tailwind CSS", "Chart.js", "Pydantic"],
-    batFile: "run_loan_calculator.bat",
-    icon: "calculator",
-    accentColor: "from-amber-600 to-orange-600",
-    statLabel: "Simulation Horizon",
-    statValue: "Up to 40 Years"
-  },
-  {
-    id: "smart-fridge-planner",
-    title: "SmartFridge AI — Meal & Pantry Planner",
-    tagline: "Zero-Waste Household Food Optimization & Recipe Engine",
-    category: "Lifestyle & AI",
-    badge: "Smart Living",
-    status: "Production Ready",
-    port: 8050,
-    liveUrl: "https://smart-fridge-planner.vercel.app",
-    localUrl: "http://127.0.0.1:8050",
-    githubUrl: "https://github.com/anildutta007/smart-fridge-planner",
-    summary: "An intelligent household culinary and inventory management platform. Tracks freshness dates of fridge and pantry staples, automatically suggests delicious recipes prioritized by expiring ingredients, generates smart shopping lists, and cuts grocery expenditure.",
-    highlights: [
-      "Dynamic fridge and pantry inventory tracking with expiry alerts",
-      "Zero-waste recipe suggestion engine powered by available ingredients",
-      "Automated consolidation of missing items into smart shopping lists",
-      "Household grocery budget analytics saving up to £120/month per home"
-    ],
-    techStack: ["Python", "FastAPI", "Tailwind CSS", "JavaScript", "Uvicorn"],
-    batFile: "run_fridge_planner.bat",
-    icon: "refrigerator",
-    accentColor: "from-purple-600 to-pink-600",
-    statLabel: "Household Savings",
-    statValue: "Up to £120/mo"
+    techStack: ["JavaScript", "HTML5 / Tailwind CSS", "jsPDF", "Legal Document Engine"],
+    batFile: "run_local.bat",
+    icon: "building-2",
+    accentColor: "from-indigo-600 to-blue-600",
+    statLabel: "Statutory Schedule",
+    statValue: "35 Conditions"
   }
 ];
 

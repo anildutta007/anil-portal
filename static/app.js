@@ -199,63 +199,63 @@ function renderApps() {
          </span>`;
 
     return `
-      <div class="app-card bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="app-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden group shadow-xs hover:shadow-xl transition-all duration-300">
         
         <!-- Top Banner Gradient Line -->
         <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${app.accentColor || 'from-brand-600 to-indigo-600'}"></div>
 
         <div>
           <!-- Header Bar -->
-          <div class="flex items-center justify-between gap-3 mb-4">
-            <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800">
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <div class="flex items-center space-x-1.5">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800">
                 ${app.badge || 'Web App'}
               </span>
               <span class="text-xs text-slate-400">•</span>
-              <span class="text-xs font-medium text-slate-500">${app.category}</span>
+              <span class="text-[11px] font-medium text-slate-500">${app.category}</span>
             </div>
             ${statusPill}
           </div>
 
           <!-- Title & Tagline -->
-          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+          <h3 class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
             ${app.title}
           </h3>
-          <p class="text-xs sm:text-sm font-semibold text-brand-600 dark:text-brand-400 mt-1 mb-2">
+          <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-0.5 mb-2.5">
             ${app.tagline}
           </p>
 
           <!-- Live Web App URL Display -->
           ${app.liveUrl ? `
-            <div class="mb-4">
-              <a href="${app.liveUrl}" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:underline transition border border-slate-200/80 dark:border-slate-700/60 shadow-xs" title="Visit Live Web Application">
-                <i data-lucide="globe" class="w-3.5 h-3.5 text-emerald-500"></i>
-                <span>${app.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
+            <div class="mb-3.5">
+              <a href="${app.liveUrl}" target="_blank" rel="noopener" class="inline-flex items-center space-x-1 px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:underline transition border border-slate-200/80 dark:border-slate-700/60 shadow-2xs" title="Visit Live Web Application">
+                <i data-lucide="globe" class="w-3 h-3 text-emerald-500"></i>
+                <span class="truncate max-w-[220px]">${app.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
                 <i data-lucide="arrow-up-right" class="w-3 h-3 text-slate-400"></i>
               </a>
             </div>
           ` : ''}
 
           <!-- Summary -->
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
             ${app.summary}
           </p>
 
           <!-- Highlights Header (if any) -->
           ${app.highlightsHeader ? `
-            <div class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 mb-2.5 flex items-center space-x-1.5">
-              <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 mb-2 flex items-center space-x-1.5">
+              <i data-lucide="zap" class="w-3 h-3 text-amber-500"></i>
               <span>${app.highlightsHeader}</span>
             </div>
           ` : ''}
 
           <!-- Highlight Bullets -->
-          <div class="space-y-2.5 mb-6">
+          <div class="space-y-2 mb-4">
             ${app.highlights.map(h => {
               const formattedH = h.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white font-bold">$1</strong>');
               return `
-                <div class="flex items-start space-x-2 text-xs sm:text-[13px] text-slate-700 dark:text-slate-300 leading-relaxed">
-                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></i>
+                <div class="flex items-start space-x-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 leading-normal">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
                   <span>${formattedH}</span>
                 </div>
               `;
@@ -263,9 +263,9 @@ function renderApps() {
           </div>
 
           <!-- Tech stack tags -->
-          <div class="flex flex-wrap gap-1.5 mb-6">
+          <div class="flex flex-wrap gap-1 mb-5">
             ${app.techStack.map(t => `
-              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200/80 dark:border-slate-700/60">
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200/80 dark:border-slate-700/60">
                 ${t}
               </span>
             `).join('')}
@@ -273,14 +273,14 @@ function renderApps() {
         </div>
 
         <!-- Action Controls -->
-        <div class="pt-5 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-3">
-          <a href="${app.githubUrl}" target="_blank" rel="noopener" onclick="trackEvent('view_github', { app_id: '${app.id}' })" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1.5" title="View Source on GitHub">
-            <i data-lucide="github" class="w-4 h-4"></i>
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2">
+          <a href="${app.githubUrl}" target="_blank" rel="noopener" onclick="trackEvent('view_github', { app_id: '${app.id}' })" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1" title="View Source on GitHub">
+            <i data-lucide="github" class="w-3.5 h-3.5"></i>
             <span>GitHub</span>
           </a>
 
-          <a href="${app.liveUrl || app.localUrl}" target="_blank" rel="noopener" onclick="trackEvent('launch_app', { app_id: '${app.id}' })" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-md shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-1.5">
-            <i data-lucide="external-link" class="w-4 h-4"></i>
+          <a href="${app.liveUrl || app.localUrl}" target="_blank" rel="noopener" onclick="trackEvent('launch_app', { app_id: '${app.id}' })" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-sm shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-1.5">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             <span>Launch Web App</span>
           </a>
         </div>

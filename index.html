@@ -47,6 +47,20 @@
 
   <!-- Custom styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" id="ga-script"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Replace G-XXXXXXXXXX with your Google Analytics Measurement ID
+    window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    gtag('config', window.GA_MEASUREMENT_ID, {
+      send_page_view: true
+    });
+  </script>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200 font-sans selection:bg-brand-500 selection:text-white">
 
@@ -165,26 +179,6 @@
             <button id="global-search-clear" class="hidden absolute right-3 px-2 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-white">
               Clear
             </button>
-          </div>
-        </div>
-
-        <!-- Stats Overview Bar -->
-        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          <div class="bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center">
-            <div class="text-2xl font-black text-brand-600 dark:text-brand-400">3 Apps</div>
-            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">Production Web Tools</div>
-          </div>
-          <div class="bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center">
-            <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400">15+ Yrs</div>
-            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">Fund Performance Data</div>
-          </div>
-          <div class="bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center">
-            <div class="text-2xl font-black text-indigo-600 dark:text-indigo-400">35 Conditions</div>
-            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">Statutory Compliance</div>
-          </div>
-          <div class="bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center">
-            <div class="text-2xl font-black text-amber-600 dark:text-amber-400">100% Free</div>
-            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">Zero Ads & Direct Access</div>
           </div>
         </div>
 

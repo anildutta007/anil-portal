@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anil Dutta | Web Applications Launchpad</title>
-  <meta name="description" content="Production-ready UK web applications for university loan planning, fund performance screening, and landlord statutory compliance by Anil Dutta.">
+  <meta name="description" content="Production-ready UK web applications for university loan planning, fund performance screening, and landlord statutory compliance by Anil Dutta. Strictly for educational and self-study purposes.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,12 +87,16 @@
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center space-x-1 text-sm font-semibold">
+        <nav class="hidden md:flex items-center space-x-2 text-sm font-semibold">
           <a href="#apps-section" class="px-3.5 py-2 rounded-lg text-brand-600 dark:text-brand-400 bg-slate-100/80 dark:bg-slate-900 transition flex items-center space-x-2">
             <i data-lucide="layout-grid" class="w-4 h-4"></i>
             <span>Web Applications</span>
             <span id="nav-app-count" class="text-xs px-2 py-0.5 rounded-full bg-brand-600 text-white font-mono font-bold">3</span>
           </a>
+          <button onclick="openLegalModal()" class="px-3 py-2 rounded-lg text-amber-700 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40 transition flex items-center space-x-1.5 text-xs font-bold border border-amber-300/60 dark:border-amber-700/50">
+            <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
+            <span>Legal Disclaimer</span>
+          </button>
         </nav>
 
         <!-- Right Action Controls -->
@@ -114,13 +118,17 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 pt-2 pb-4 space-y-1">
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 pt-2 pb-4 space-y-2">
       <a href="#apps-section" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-900">Web Applications (3)</a>
+      <button onclick="openLegalModal()" class="w-full text-left px-3 py-2 rounded-lg text-amber-700 dark:text-amber-400 font-bold hover:bg-amber-50 dark:hover:bg-amber-950/40 text-xs flex items-center space-x-1.5">
+        <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
+        <span>Important Legal Disclaimer</span>
+      </button>
     </div>
   </header>
 
   <!-- ================= HERO SECTION ================= -->
-  <section class="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-slate-200/80 dark:border-slate-800/80 bg-gradient-to-b from-white via-slate-50 to-slate-100/60 dark:from-slate-950 dark:via-slate-900/60 dark:to-slate-950">
+  <section class="relative overflow-hidden pt-12 pb-14 md:pt-18 md:pb-20 border-b border-slate-200/80 dark:border-slate-800/80 bg-gradient-to-b from-white via-slate-50 to-slate-100/60 dark:from-slate-950 dark:via-slate-900/60 dark:to-slate-950">
     
     <!-- Background subtle glow accents -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-brand-500/15 via-indigo-500/10 to-emerald-500/15 blur-3xl -z-10 rounded-full pointer-events-none"></div>
@@ -153,6 +161,10 @@
             <i data-lucide="compass" class="w-4 h-4"></i>
             <span>Explore 3 Web Apps</span>
           </a>
+          <button onclick="openLegalModal()" class="px-5 py-3.5 rounded-xl font-bold text-sm bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 hover:bg-amber-100 dark:hover:bg-amber-900/50 transition flex items-center space-x-2">
+            <i data-lucide="shield-alert" class="w-4 h-4"></i>
+            <span>Educational Disclaimer</span>
+          </button>
         </div>
 
         <!-- Global Search / Filter Input -->
@@ -191,8 +203,80 @@
     </div>
   </section>
 
+  <!-- ================= PROMINENT LEGAL DISCLAIMER NOTICE (VISIBLE TO ALL) ================= -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+    <div class="bg-gradient-to-r from-amber-50 via-amber-50/50 to-orange-50 dark:from-amber-950/30 dark:via-slate-900 dark:to-orange-950/30 border-2 border-amber-300 dark:border-amber-700/60 rounded-3xl p-6 sm:p-8 shadow-md">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 mb-4 border-b border-amber-200 dark:border-amber-800/60">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h2 class="text-base sm:text-lg font-black tracking-tight text-slate-900 dark:text-white uppercase">
+              Mandatory Legal & Educational Disclaimer Notice
+            </h2>
+            <p class="text-xs font-bold text-amber-800 dark:text-amber-400">
+              STRICTLY FOR EDUCATIONAL SIMULATION & INFORMATIONAL PURPOSES ONLY • NOT REGULATED ADVICE
+            </p>
+          </div>
+        </div>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-amber-200 dark:bg-amber-900/80 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 uppercase tracking-wider self-start lg:self-center">
+          Zero Professional Liability
+        </span>
+      </div>
+
+      <div class="text-xs sm:text-[13px] text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
+        <p>
+          The tools and information made available on this website and linked domains are independent computational projects developed by <strong>Anil Dutta</strong> strictly for <strong>educational self-study, scenario modeling, and research exploration</strong>.
+        </p>
+
+        <!-- 3 Specific Category Disclaimers -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-1">
+          <div class="bg-white/90 dark:bg-slate-900/80 p-4 rounded-2xl border border-amber-200 dark:border-amber-800/40">
+            <div class="flex items-center space-x-2 font-black text-slate-900 dark:text-white text-xs mb-1.5">
+              <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500"></i>
+              <span>No Financial Advice (FCA)</span>
+            </div>
+            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
+              <strong>Not authorized by the UK Financial Conduct Authority (FCA).</strong> Fund performance data (Trustnet / FE fundinfo) is historical and does not guarantee future returns. Calculations do not constitute financial advice or investment recommendations. Seek advice from an FCA-regulated Independent Financial Adviser (IFA).
+            </p>
+          </div>
+
+          <div class="bg-white/90 dark:bg-slate-900/80 p-4 rounded-2xl border border-amber-200 dark:border-amber-800/40">
+            <div class="flex items-center space-x-2 font-black text-slate-900 dark:text-white text-xs mb-1.5">
+              <i data-lucide="calculator" class="w-4 h-4 text-amber-500"></i>
+              <span>No Tax or Loan Warranty</span>
+            </div>
+            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
+              <strong>Not tax or debt advice.</strong> Student loan projections and payslip breakdowns are mathematical estimates based on current published UK Student Loans Company (SLC) and HMRC thresholds. Policies, thresholds, and interest rules are subject to statutory alteration. Consult a certified accountant.
+            </p>
+          </div>
+
+          <div class="bg-white/90 dark:bg-slate-900/80 p-4 rounded-2xl border border-amber-200 dark:border-amber-800/40">
+            <div class="flex items-center space-x-2 font-black text-slate-900 dark:text-white text-xs mb-1.5">
+              <i data-lucide="scale" class="w-4 h-4 text-indigo-500"></i>
+              <span>No Legal Representation</span>
+            </div>
+            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
+              <strong>Not legal advice or tenancy deeds.</strong> Licensing checklists and PDF document templates under the Housing Act 2004 are general self-help samples only. Council conditions vary across boroughs and require independent local authority verification. Consult a qualified solicitor or chartered surveyor.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-amber-200 dark:border-amber-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600 dark:text-slate-400">
+          <p class="font-semibold">
+            <strong>Limitation of Liability:</strong> You acknowledge that you use these tools entirely at your own risk. Anil Dutta and this platform accept zero liability for any direct, indirect, consequential, financial, or legal losses or penalties arising from reliance upon these tools.
+          </p>
+          <button onclick="openLegalModal()" class="flex-shrink-0 font-bold underline text-brand-600 dark:text-brand-400 hover:text-brand-500 text-xs">
+            Read Full Legal Terms & Liability Waiver &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= SECTION 1: WEB APPS LAUNCHPAD ================= -->
-  <section id="apps-section" class="py-16 md:py-24 border-b border-slate-200 dark:border-slate-800/80">
+  <section id="apps-section" class="py-14 md:py-20 border-b border-slate-200 dark:border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
@@ -241,7 +325,7 @@
             <span>Anil Dutta Web Applications Hub</span>
           </div>
           <p class="text-xs text-slate-500 max-w-md leading-relaxed">
-            A unified digital launchpad showcasing custom web applications for UK university finance, investment fund screening, and landlord property compliance.
+            A unified digital launchpad showcasing custom web applications for UK university finance, investment fund screening, and landlord property compliance. Strictly for educational self-study.
           </p>
           <div class="text-[11px] text-slate-400 dark:text-slate-500">
             © 2026 Anil Dutta. All rights reserved.
@@ -258,15 +342,103 @@
         </div>
 
         <div>
-          <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-xs uppercase tracking-wider">Legal & Disclaimer</h4>
-          <p class="text-[11px] text-slate-400 leading-normal">
-            <strong>Important Notice:</strong> Content and tools hosted on this portal are created strictly for educational, informational, and software demonstration purposes. They do not constitute regulated financial, legal, or investment advice under the UK FCA.
+          <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-xs uppercase tracking-wider">Legal Terms & Disclaimer</h4>
+          <p class="text-[11px] text-slate-400 leading-normal mb-2">
+            <strong>Statutory Notice:</strong> Strictly for educational and informational analysis. Not regulated by the UK Financial Conduct Authority (FCA). Not financial, legal, investment, mortgage, debt, or tax advice.
           </p>
+          <p class="text-[11px] text-slate-400 leading-normal mb-2">
+            No professional-client contract exists. Anil Dutta bears zero liability for actions taken based on these tools. Consult a certified IFA, accountant, or solicitor.
+          </p>
+          <button onclick="openLegalModal()" class="text-[11px] font-bold underline text-brand-600 dark:text-brand-400 hover:text-brand-500">
+            View Full Liability Waiver & Terms &rarr;
+          </button>
         </div>
 
       </div>
     </div>
   </footer>
+
+  <!-- ================= COMPREHENSIVE LEGAL TERMS & LIABILITY WAIVER MODAL ================= -->
+  <div id="legal-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 w-full max-w-3xl rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white">Full Legal Disclaimer & Terms of Use</h3>
+            <p class="text-xs text-slate-500">Binding Legal Agreement & Complete Exclusion of Liability</p>
+          </div>
+        </div>
+        <button id="close-legal-modal" onclick="closeLegalModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+        <div class="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-200 font-semibold text-xs">
+          IMPORTANT: By accessing, viewing, or interacting with this website or any of the applications linked herein, you unconditionally agree to the following terms, disclaimers, and limitation of liability. If you do not agree, you must immediately cease use of this site.
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase mb-1">1. Educational & Non-Commercial Nature</h4>
+          <p>
+            All web applications, financial calculators, statistical models, document generators, and written summaries are independent software projects created by <strong>Anil Dutta</strong> strictly for <strong>educational demonstration, scientific exploration, and self-study purposes only</strong>. None of the materials represent professional, commercial, or licensed advisory services.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase mb-1">2. No Regulated Financial Advice (UK FSMA 2000 & FCA)</h4>
+          <p>
+            Anil Dutta is not an Independent Financial Adviser (IFA), registered investment manager, broker, or tax consultant. Nothing contained on this website or in the <strong>Dutta UK Funds Selection Advisor</strong> constitutes regulated financial advice or investment recommendations under the UK Financial Services and Markets Act 2000 (FSMA) or regulations administered by the Financial Conduct Authority (FCA). Historical performance data (from FE fundinfo, Trustnet, or public records) is no guarantee of future returns. Investments fluctuate in value; you may lose capital. Always consult an authorized and regulated IFA prior to making investment decisions.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase mb-1">3. Student Loan & Tax Modeling Disclaimers</h4>
+          <p>
+            The <strong>UK University Fee & Student Loan Calculator</strong> generates mathematical estimates based upon public statutory rules from the Student Loans Company (SLC), Department for Education (DfE), and HM Revenue & Customs (HMRC). Repayment thresholds, interest calculation formulas, and loan write-off periods are subject to retrospective legislative amendments by the UK Parliament. Outputs do not constitute individual tax advice, debt counseling, or binding financial planning.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase mb-1">4. Property & Tenancy Compliance Disclaimers</h4>
+          <p>
+            The <strong>UK Landlord & Tenant Compliance Hub</strong> provides general informational checklists and draft document templates relating to Selective Licensing (Housing Act 2004 Part 3). These do not constitute legal advice, solicitor services, or guaranteed local authority compliance. Local councils have individual, discretionary enforcement guidelines. No solicitor-client relationship is formed. Landlords must seek independent legal advice from a qualified solicitor or chartered surveyor.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase mb-1">5. Absolute Exclusion of Warranties ("As Is")</h4>
+          <p>
+            This website and all tools are provided on a strictly <strong>"AS IS" and "AS AVAILABLE"</strong> basis without any representation or warranty of any kind, whether express, statutory, or implied, including but not limited to warranties of completeness, mathematical accuracy, reliability, merchantability, or fitness for any particular purpose.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase mb-1">6. Total Limitation of Liability & Hold Harmless</h4>
+          <p>
+            <strong>Under no circumstances shall Anil Dutta or any contributors be held liable</strong> for any direct, indirect, incidental, consequential, special, or exemplary damages, financial losses, loss of profits, tax reassessments, regulatory penalties, council fines, or investment outcomes arising out of or in connection with the access, use, or reliance on any software tool, calculation, or information provided on this platform. Users assume 100% of the risk.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase mb-1">7. Governing Law</h4>
+          <p>
+            These terms and disclaimers are governed exclusively by and construed in accordance with the laws of <strong>England and Wales</strong>, and the courts of England and Wales shall have exclusive jurisdiction.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-between text-xs text-slate-500">
+        <span>Updated October 2026 • Anil Dutta Launchpad</span>
+        <button onclick="closeLegalModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:opacity-90 transition">
+          I Understand & Acknowledge
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Toast Notification Container -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-2xl bg-slate-900 text-white text-xs font-semibold shadow-2xl border border-slate-800 flex items-center space-x-2 transition-all transform translate-y-2">

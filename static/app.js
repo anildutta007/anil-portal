@@ -273,16 +273,22 @@ function renderApps() {
         </div>
 
         <!-- Action Controls -->
-        <div class="pt-5 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-3">
-          <a href="${app.githubUrl}" target="_blank" rel="noopener" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1.5" title="View Source on GitHub">
-            <i data-lucide="github" class="w-4 h-4"></i>
-            <span>GitHub</span>
-          </a>
+        <div class="pt-5 border-t border-slate-100 dark:border-slate-800/80">
+          <div class="flex items-center justify-between gap-3">
+            <a href="${app.githubUrl}" target="_blank" rel="noopener" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1.5" title="View Source on GitHub">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GitHub</span>
+            </a>
 
-          <a href="${app.liveUrl || app.localUrl}" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-md shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-1.5">
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-            <span>Launch Web App</span>
-          </a>
+            <a href="${app.liveUrl || app.localUrl}" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-md shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-1.5">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Launch Web App</span>
+            </a>
+          </div>
+          <div class="mt-3 pt-2 border-t border-dashed border-slate-100 dark:border-slate-800/60 flex items-center justify-center space-x-1.5 text-[10px] text-slate-400 dark:text-slate-500 font-medium">
+            <i data-lucide="shield-alert" class="w-3 h-3 text-amber-500/80"></i>
+            <span>Educational simulation only • Zero professional liability</span>
+          </div>
         </div>
 
       </div>
@@ -291,6 +297,28 @@ function renderApps() {
 
   lucide.createIcons();
 }
+
+// ================= LEGAL MODAL CONTROLS =================
+function openLegalModal() {
+  const modal = document.getElementById('legal-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    lucide.createIcons();
+  }
+}
+
+function closeLegalModal() {
+  const modal = document.getElementById('legal-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}
+
+// Expose functions globally for HTML onclick handlers
+window.openLegalModal = openLegalModal;
+window.closeLegalModal = closeLegalModal;
 
 // ================= EVENT LISTENERS =================
 function initEventListeners() {
@@ -306,6 +334,20 @@ function initEventListeners() {
       mobileMenu.classList.toggle('hidden');
     });
   }
+
+  // Legal Modal Backdrop & Keyboard handling
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('legal-modal');
+    if (modal && e.target === modal) {
+      closeLegalModal();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLegalModal();
+    }
+  });
 
   // App Filter Tabs
   document.querySelectorAll('.app-filter-btn').forEach(btn => {

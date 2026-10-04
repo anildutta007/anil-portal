@@ -1,6 +1,6 @@
 """
-Anil Dutta - Digital Web-Apps & Financial Insights Hub
-Master Portfolio, Web Apps Launchpad, Articles Hub & Q&A Help Desk Server
+Anil Dutta - Web Applications Launchpad
+Master Portfolio & Production Web Apps Hub
 Runs on FastAPI / Uvicorn (Port 8090)
 """
 
@@ -27,8 +27,8 @@ os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(STATIC_DIR, exist_ok=True)
 
 app = FastAPI(
-    title="Anil Dutta - Web Apps & Insights Hub",
-    description="Portfolio launchpad, curated financial & tech articles, and community Help desk.",
+    title="Anil Dutta - Web Applications Launchpad",
+    description="Portfolio launchpad for UK Student Loans, Fund Selection, and Landlord Compliance tools.",
     version="1.0.0"
 )
 
@@ -272,7 +272,7 @@ def open_browser():
 if __name__ == "__main__":
     PORT = 8090
     print("=" * 65)
-    print("  ANIL DUTTA - DIGITAL APPS, FINANCIAL ARTICLES & HELP HUB")
+    print("  ANIL DUTTA - WEB APPLICATIONS LAUNCHPAD")
     print(f"  Starting master portal on http://127.0.0.1:{PORT} ...")
     print("=" * 65)
     threading.Timer(1.2, open_browser).start()

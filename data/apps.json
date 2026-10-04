@@ -10,12 +10,13 @@
     "liveUrl": "https://www.ukstudentloancalculator.co.uk/",
     "localUrl": "http://127.0.0.1:8060",
     "githubUrl": "https://github.com/anildutta007/uk-student-loan-calculator",
-    "summary": "The definitive England & Wales student loan and university finance simulator. Analyzes tuition fees, take-home payslips with Income Tax, NI, and student loans, models the Plan 2 vs Plan 5 marginal tax wedge, and compares early loan payoff against global equity index investing over 30 to 40 years.",
+    "summary": "The definitive England & Wales student loan lifetime simulator. Analyzes take-home payslips with Income Tax, NI, and student loans, models the Plan 2 vs Plan 5 marginal tax wedge, and compares early loan payoff against global equity index investing over 30 to 40 years.",
     "highlights": [
-      "Comprehensive Plan 2 (30-yr / £27,295) vs Plan 5 (40-yr / £25,000) simulation",
-      "Salary sacrifice pension impact on graduate tax deductions",
-      "Parental contribution vs Global Equity S&P/MSCI investment opportunity cost",
-      "Lifetime balance write-off and total cost-to-graduate modeling"
+      "**Actual Monthly Payslip Impact:** Breaks down your gross salary into Income Tax, National Insurance (8%), Student Loan (9%), and your exact net monthly take-home pay.",
+      "**Plan 2 vs Plan 5:** Covers course start dates (Pre-Aug 2023 vs Post-Aug 2023 for England, and Wales staying on Plan 2), writing off after 30 vs 40 years.",
+      "**Updated for 2026/27 GOV.UK figures:** Uses the current £29,385 Plan 2 threshold, £25k Plan 5 threshold, £21k Postgraduate threshold, and the official 4.1% interest / 6.0% caps.",
+      "**Lifetime 30- & 40-Year Projection:** Tracks whether you actually clear the debt or have it wiped by the government, plus a full year-by-year breakdown with CSV export.",
+      "**The 'Should Parents Pay Tuition?' Simulator:** Many parents consider paying £9,250/yr tuition upfront. The calculator compares paying fees vs investing the same money in an ISA at 3%, 4%, and 5% compound growth. (In many typical graduate career paths, paying tuition upfront saves £0 in student monthly deductions and simply hands cash to HMRC because the loan gets cancelled anyway)."
     ],
     "techStack": ["Python", "FastAPI", "Tailwind CSS", "Chart.js", "Pydantic"],
     "batFile": "run_loan_calculator.bat",
@@ -35,12 +36,14 @@
     "liveUrl": "https://uk-funds-advisor.vercel.app/",
     "localUrl": "http://127.0.0.1:8080",
     "githubUrl": "https://github.com/anildutta007/uk-funds-advisor",
-    "summary": "An institutional-grade UK fund screener and portfolio analytics workbench built on FE fundinfo Trustnet multi-house data. Features 15-year annual calendar returns, Alpha, FE Crown ratings, Ongoing Charges Figures (OCF), and benchmark comparisons across premier UK asset managers.",
+    "summary": "Institutional-grade UK fund screener powered by FE fundinfo Trustnet multi-house data with 15-year annual calendar returns.",
+    "highlightsHeader": "What it tells you in 30 seconds:",
     "highlights": [
-      "15-Year annual calendar track records across major fund houses",
-      "Multi-dimensional scoring: Alpha, Beta, Risk Score & FE Crown ratings",
-      "Interactive ISA & SIPP investment asset allocation builder",
-      "Zero-dependency high-speed architecture with interactive charts"
+      "Which top UK funds to pick (Low, Medium, or High risk)",
+      "How much money you need to retire comfortably",
+      "How much to save each month to hit your goal",
+      "How many years your pension pot will last (including your UK State Pension)",
+      "Shows everything in today's real grocery prices, so inflation doesn't fool you!"
     ],
     "techStack": ["Python", "FE fundinfo Trustnet Data", "Chart.js", "Financial Mathematics"],
     "batFile": "run_funds_advisor.bat",
@@ -62,10 +65,10 @@
     "githubUrl": "https://github.com/anildutta007/uk-landlord-licensing",
     "summary": "A professional compliance and audit management portal for UK Buy-to-Let landlords, tenants, and letting agents. Built to manage Selective Licensing (Housing Act 2004 Part 3), council 35-condition checklist audits, occupancy limits, ASB warnings, and instant generation of official legal PDF documents.",
     "highlights": [
-      "35-Condition Master Statutory Council Checklist Tracker",
-      "Instant downloadable official PDF legal documents (Inspections, ASB notices, Deeds)",
-      "Multi-Council & Property preset switcher (Redbridge, Newham, Generic UK)",
-      "100% private client-side storage with penalty exposure calculator"
+      "**35-Condition Master Statutory Council Checklist Tracker:** Comprehensive audit coverage across fire safety, EICR, gas CP12, and space standards.",
+      "**Instant Downloadable Legal PDF Documents:** Generates 7 official audit-ready documents (Inspections, ASB notices, Deeds of consent).",
+      "**Multi-Council Preset Switcher:** Pre-configured for London Borough of Redbridge, Newham, and generic England & Wales Housing Act benchmarks.",
+      "**Statutory Deadline & Penalty Calculator:** Tracks 7-day, 28-day, and 30-day compliance windows with £30,000 civil penalty risk modeling."
     ],
     "techStack": ["JavaScript", "HTML5 / Tailwind CSS", "jsPDF", "Legal Document Engine"],
     "batFile": "run_local.bat",

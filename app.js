@@ -22,7 +22,6 @@ const FALLBACK_APPS = [
     port: 8060,
     liveUrl: "https://www.ukstudentloancalculator.co.uk/",
     localUrl: "http://127.0.0.1:8060",
-    githubUrl: "https://github.com/anildutta007/uk-student-loan-calculator",
     summary: "If your son or daughter is heading to university, your first instinct as a parent might be to pay tuition fees upfront or help pay down their student loan so they don't start adult life in debt. However, UK student finance doesn't work like a bank loan.",
     highlightsHeader: "Parent Financial Reality Check:",
     highlights: [
@@ -49,7 +48,6 @@ const FALLBACK_APPS = [
     port: 8080,
     liveUrl: "https://uk-funds-advisor.vercel.app/",
     localUrl: "http://127.0.0.1:8080",
-    githubUrl: "https://github.com/anildutta007/uk-funds-advisor",
     summary: "Institutional-grade UK fund screener powered by FE fundinfo Trustnet multi-house data with 15-year annual calendar returns.",
     highlightsHeader: "What it tells you in 30 seconds:",
     highlights: [
@@ -67,6 +65,32 @@ const FALLBACK_APPS = [
     statValue: "15+ Years Calendar"
   },
   {
+    id: "stock-picker",
+    title: "Global & UK Stock Picker",
+    tagline: "FTSE, NASDAQ, Dow Jones & NIFTY 50 Intelligence Hub",
+    category: "FinTech & Wealth",
+    badge: "Stock Intelligence",
+    status: "Production Ready",
+    port: 8088,
+    liveUrl: "https://uk-stock-picker.vercel.app",
+    localUrl: "http://127.0.0.1:8088",
+    summary: "Multi-market stock screening platform covering the London Stock Exchange (FTSE 100/250/350), US Wall Street (NASDAQ 100 & Dow Jones 30), and India's NSE NIFTY 50. Screen momentum breakouts, relative volume surges, customizable gainers/decliners, upcoming ex-dividend calendars, and institutional ratings.",
+    highlightsHeader: "Key Capabilities:",
+    highlights: [
+      "**Multi-Market Universe:** Screen FTSE 100, FTSE 250, FTSE 350, NASDAQ 100, Dow Jones 30, and NIFTY 50 in real time.",
+      "**Momentum & Volume Breakouts:** RVOL surge detection (>1.5x–3.0x), 52-week highs, and moving average crossovers.",
+      "**Customizable Gainers & Decliners:** Filter 1D, 1W, and 1M percentage movers using dynamic sliders and exact inputs.",
+      "**Ex-Dividend Cutoff Calendar & Cash Calculator:** Purchase cutoff deadlines, yields, and dividend cash income calculations.",
+      "**Institutional Ratings & Catalysts:** Wall Street consensus (Goldman Sachs, JPMorgan, etc.), price targets, and news catalysts."
+    ],
+    techStack: ["Python", "FastAPI", "Multi-Market Feed", "Tailwind CSS", "Chart.js"],
+    batFile: "run_picker.bat",
+    icon: "line-chart",
+    accentColor: "from-cyan-600 to-blue-600",
+    statLabel: "Market Coverage",
+    statValue: "6 Global Indices"
+  },
+  {
     id: "landlord-licensing",
     title: "UK Landlord & Tenant Compliance Hub",
     tagline: "Selective Licensing, HMO Standards & Statutory Legal Notices",
@@ -76,7 +100,6 @@ const FALLBACK_APPS = [
     port: 8070,
     liveUrl: "https://uk-landlord-licensing.vercel.app",
     localUrl: "http://127.0.0.1:8070",
-    githubUrl: "https://github.com/anildutta007/uk-landlord-licensing",
     summary: "A professional compliance and audit management portal for UK Buy-to-Let landlords, tenants, and letting agents. Built to manage Selective Licensing (Housing Act 2004 Part 3), council 35-condition checklist audits, occupancy limits, ASB warnings, and instant generation of official legal PDF documents.",
     highlights: [
       "**35-Condition Master Statutory Council Checklist Tracker:** Comprehensive audit coverage across fire safety, EICR, gas CP12, and space standards.",
@@ -274,15 +297,10 @@ function renderApps() {
         </div>
 
         <!-- Action Controls -->
-        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2">
-          <a href="${app.githubUrl}" target="_blank" rel="noopener" onclick="trackEvent('view_github', { app_id: '${app.id}' })" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1" title="View Source on GitHub">
-            <i data-lucide="github" class="w-3.5 h-3.5"></i>
-            <span>GitHub</span>
-          </a>
-
-          <a href="${app.liveUrl || app.localUrl}" target="_blank" rel="noopener" onclick="trackEvent('launch_app', { app_id: '${app.id}' })" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-sm shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-1.5">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80">
+          <a href="${app.liveUrl || app.localUrl}" target="_blank" rel="noopener" onclick="trackEvent('launch_app', { app_id: '${app.id}' })" class="w-full justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-sm shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-2 text-center">
             <span>Launch Web App</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
           </a>
         </div>
 

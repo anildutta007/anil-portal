@@ -22,16 +22,14 @@ const FALLBACK_APPS = [
     port: 8060,
     liveUrl: "https://www.ukstudentloancalculator.co.uk/",
     localUrl: "http://127.0.0.1:8060",
-    summary: "If your son or daughter is heading to university, your first instinct as a parent might be to pay tuition fees upfront or help pay down their student loan so they don't start adult life in debt. However, UK student finance doesn't work like a bank loan.",
-    highlightsHeader: "Parent Financial Reality Check:",
+    summary: "Simulates UK Plan 2 & Plan 5 university student loan repayments to determine whether paying tuition upfront or investing in an ISA is financially optimal.",
+    highlightsHeader: "Key Highlights:",
     highlights: [
-      "**Student loans are repaid strictly as a 9% tax** on earnings above the threshold (£25k for Plan 5, £29k for Plan 2).",
-      "**Paying upfront does not reduce monthly payments by even £1** unless their salary is exceptionally high — remaining debt is wiped out after 30 or 40 years.",
-      "**The £70,000+ ISA Deposit Alternative:** Keeping that £27,750 in a Stocks & Shares ISA compounding at 5% can grow into £70,000+ for their first home deposit.",
-      "**Model your child's expected career path:** See whether paying fees makes financial sense for your specific graduate before handing cash to HMRC.",
-      "**100% Free & Updated:** No sign-up, no ads, updated with official 2026/27 Student Finance England rules."
+      "**9% Graduate Tax Model:** Simulates repayments strictly on earnings above salary thresholds (£25k/£29k).",
+      "**£70,000+ ISA Deposit Alternative:** Compares upfront fee payments against long-term compounding for a home deposit.",
+      "**Lifetime Debt Forgiveness:** Models total graduate repayments vs official write-off after 30 or 40 years."
     ],
-    techStack: ["Python", "FastAPI", "Tailwind CSS", "Chart.js", "Pydantic"],
+    techStack: ["Python", "FastAPI", "Tailwind CSS", "Chart.js"],
     batFile: "run_loan_calculator.bat",
     icon: "calculator",
     accentColor: "from-amber-600 to-orange-600",
@@ -48,16 +46,14 @@ const FALLBACK_APPS = [
     port: 8080,
     liveUrl: "https://uk-funds-advisor.vercel.app/",
     localUrl: "http://127.0.0.1:8080",
-    summary: "Institutional-grade UK fund screener powered by FE fundinfo Trustnet multi-house data with 15-year annual calendar returns.",
-    highlightsHeader: "What it tells you in 30 seconds:",
+    summary: "Institutional-grade UK fund screener and retirement calculator powered by FE fundinfo Trustnet 15-year annual performance data.",
+    highlightsHeader: "Key Highlights:",
     highlights: [
-      "Which top UK funds to pick (Low, Medium, or High risk)",
-      "How much money you need to retire comfortably",
-      "How much to save each month to hit your goal",
-      "How many years your pension pot will last (including your UK State Pension)",
-      "Shows everything in today's real grocery prices, so inflation doesn't fool you!"
+      "**Risk-Rated Fund Screener:** Filter and rank top UK funds across Low, Medium, and High risk profiles.",
+      "**Retirement Pot Runway:** Calculates how long savings last alongside the UK State Pension.",
+      "**Inflation-Adjusted Target:** Projects real monthly savings goals calibrated to today's grocery prices."
     ],
-    techStack: ["Python", "FE fundinfo Trustnet Data", "Chart.js", "Financial Mathematics"],
+    techStack: ["Python", "Trustnet Data", "Tailwind CSS", "Chart.js"],
     batFile: "run_funds_advisor.bat",
     icon: "trending-up",
     accentColor: "from-emerald-600 to-teal-600",
@@ -74,16 +70,14 @@ const FALLBACK_APPS = [
     port: 8088,
     liveUrl: "https://uk-stock-picker.vercel.app",
     localUrl: "http://127.0.0.1:8088",
-    summary: "Multi-market stock screening platform covering the London Stock Exchange (FTSE 100/250/350), US Wall Street (NASDAQ 100 & Dow Jones 30), and India's NSE NIFTY 50. Screen momentum breakouts, relative volume surges, customizable gainers/decliners, upcoming ex-dividend calendars, and institutional ratings.",
-    highlightsHeader: "Key Capabilities:",
+    summary: "Multi-market intelligence platform screening momentum breakouts, relative volume surges, and dividends across the UK, US, and India.",
+    highlightsHeader: "Key Highlights:",
     highlights: [
-      "**Multi-Market Universe:** Screen FTSE 100, FTSE 250, FTSE 350, NASDAQ 100, Dow Jones 30, and NIFTY 50 in real time.",
-      "**Momentum & Volume Breakouts:** RVOL surge detection (>1.5x–3.0x), 52-week highs, and moving average crossovers.",
-      "**Customizable Gainers & Decliners:** Filter 1D, 1W, and 1M percentage movers using dynamic sliders and exact inputs.",
-      "**Ex-Dividend Cutoff Calendar & Cash Calculator:** Purchase cutoff deadlines, yields, and dividend cash income calculations.",
-      "**Institutional Ratings & Catalysts:** Wall Street consensus (Goldman Sachs, JPMorgan, etc.), price targets, and news catalysts."
+      "**6 Market Universes:** Screens FTSE 100/250/350, NASDAQ 100, Dow Jones 30, and NIFTY 50 in real time.",
+      "**Volume & Momentum Spikes:** Detects RVOL surges (>1.5x–3.0x), 52-week highs, and customizable movers.",
+      "**Ex-Dividend Calendar & Ratings:** Purchase cutoff dates, dividend cash calculator, and Wall Street analyst targets."
     ],
-    techStack: ["Python", "FastAPI", "Multi-Market Feed", "Tailwind CSS", "Chart.js"],
+    techStack: ["Python", "FastAPI", "Yahoo Finance Feed", "Chart.js"],
     batFile: "run_picker.bat",
     icon: "line-chart",
     accentColor: "from-cyan-600 to-blue-600",
@@ -100,14 +94,14 @@ const FALLBACK_APPS = [
     port: 8070,
     liveUrl: "https://uk-landlord-licensing.vercel.app",
     localUrl: "http://127.0.0.1:8070",
-    summary: "A professional compliance and audit management portal for UK Buy-to-Let landlords, tenants, and letting agents. Built to manage Selective Licensing (Housing Act 2004 Part 3), council 35-condition checklist audits, occupancy limits, ASB warnings, and instant generation of official legal PDF documents.",
+    summary: "Compliance and audit management portal for UK Buy-to-Let landlords and letting agents under Housing Act 2004 Selective Licensing.",
+    highlightsHeader: "Key Highlights:",
     highlights: [
-      "**35-Condition Master Statutory Council Checklist Tracker:** Comprehensive audit coverage across fire safety, EICR, gas CP12, and space standards.",
-      "**Instant Downloadable Legal PDF Documents:** Generates 7 official audit-ready documents (Inspections, ASB notices, Deeds of consent).",
-      "**Multi-Council Preset Switcher:** Pre-configured for London Borough of Redbridge, Newham, and generic England & Wales Housing Act benchmarks.",
-      "**Statutory Deadline & Penalty Calculator:** Tracks 7-day, 28-day, and 30-day compliance windows with £30,000 civil penalty risk modeling."
+      "**35-Condition Council Audit:** Comprehensive checklist covering fire safety, gas CP12, EICR, and space standards.",
+      "**Instant Legal PDF Documents:** Produces 7 audit-ready inspection reports, statutory notices, and deeds.",
+      "**Deadline & Penalty Alerts:** Tracks statutory 7/28/30-day compliance windows and civil penalty risks."
     ],
-    techStack: ["JavaScript", "HTML5 / Tailwind CSS", "jsPDF", "Legal Document Engine"],
+    techStack: ["JavaScript", "HTML5", "jsPDF", "Compliance Engine"],
     batFile: "run_local.bat",
     icon: "building-2",
     accentColor: "from-indigo-600 to-blue-600",
@@ -223,7 +217,7 @@ function renderApps() {
          </span>`;
 
     return `
-      <div class="app-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden group shadow-xs hover:shadow-xl transition-all duration-300">
+      <div class="app-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 p-5 flex flex-col justify-between relative overflow-hidden group shadow-xs hover:shadow-xl transition-all duration-300">
         
         <!-- Top Banner Gradient Line -->
         <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${app.accentColor || 'from-brand-600 to-indigo-600'}"></div>
@@ -251,34 +245,34 @@ function renderApps() {
 
           <!-- Live Web App URL Display -->
           ${app.liveUrl ? `
-            <div class="mb-3.5">
+            <div class="mb-3">
               <a href="${app.liveUrl}" target="_blank" rel="noopener" class="inline-flex items-center space-x-1 px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/50 hover:underline transition border border-slate-200/80 dark:border-slate-700/60 shadow-2xs" title="Visit Live Web Application">
                 <i data-lucide="globe" class="w-3 h-3 text-emerald-500"></i>
-                <span class="truncate max-w-[220px]">${app.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
+                <span class="truncate max-w-[200px]">${app.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
                 <i data-lucide="arrow-up-right" class="w-3 h-3 text-slate-400"></i>
               </a>
             </div>
           ` : ''}
 
           <!-- Summary -->
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
             ${app.summary}
           </p>
 
           <!-- Highlights Header (if any) -->
           ${app.highlightsHeader ? `
-            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 mb-2 flex items-center space-x-1.5">
+            <div class="text-[10.5px] font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 mb-2 flex items-center space-x-1.5">
               <i data-lucide="zap" class="w-3 h-3 text-amber-500"></i>
               <span>${app.highlightsHeader}</span>
             </div>
           ` : ''}
 
           <!-- Highlight Bullets -->
-          <div class="space-y-2 mb-4">
+          <div class="space-y-1.5 mb-3.5">
             ${app.highlights.map(h => {
-              const formattedH = h.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white font-bold">$1</strong>');
+              const formattedH = h.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white font-semibold">$1</strong>');
               return `
-                <div class="flex items-start space-x-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 leading-normal">
+                <div class="flex items-start space-x-1.5 text-[11px] text-slate-700 dark:text-slate-300 leading-normal">
                   <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 flex-shrink-0"></i>
                   <span>${formattedH}</span>
                 </div>
@@ -287,7 +281,7 @@ function renderApps() {
           </div>
 
           <!-- Tech stack tags -->
-          <div class="flex flex-wrap gap-1 mb-5">
+          <div class="flex flex-wrap gap-1 mb-4">
             ${app.techStack.map(t => `
               <span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200/80 dark:border-slate-700/60">
                 ${t}
@@ -297,7 +291,7 @@ function renderApps() {
         </div>
 
         <!-- Action Controls -->
-        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80">
+        <div class="pt-3.5 border-t border-slate-100 dark:border-slate-800/80">
           <a href="${app.liveUrl || app.localUrl}" target="_blank" rel="noopener" onclick="trackEvent('launch_app', { app_id: '${app.id}' })" class="w-full justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-sm shadow-brand-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-2 text-center">
             <span>Launch Web App</span>
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>

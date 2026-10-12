@@ -114,6 +114,7 @@ const FALLBACK_APPS = [
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initClock();
+  initVisitorCounter();
   initEventListeners();
   loadData();
 });
@@ -149,6 +150,72 @@ function initClock() {
   }
   updateTime();
   setInterval(updateTime, 30000);
+}
+
+// Live Visitor Counter
+async function initVisitorCounter() {
+  const countEl = document.getElementById('visitor-count');
+  const mobileCountEl = document.getElementById('mobile-visitor-count');
+  if (!countEl && !mobileCountEl) return;
+
+  const CACHE_KEY = 'ad_site_visitors_cache';
+  const LAST_VISIT_KEY = 'ad_last_visit_timestamp';
+  const BASE_OFFSET = 120; // Baseline visits prior to counter deployment
+  const now = Date.now();
+  const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+  function updateDisplay(num) {
+    const formatted = Number(num).toLocaleString('en-GB');
+    if (countEl) countEl.textContent = formatted;
+    if (mobileCountEl) mobileCountEl.textContent = formatted;
+  }
+
+  // Restore cached value immediately to avoid blank flash
+  const cached = localStorage.getItem(CACHE_KEY);
+  if (cached) {
+    updateDisplay(parseInt(cached, 10));
+  }
+
+  // Increment once per user per 24 hours
+  const lastVisit = parseInt(localStorage.getItem(LAST_VISIT_KEY) || '0', 10);
+  const isNewVisit = !lastVisit || (now - lastVisit > ONE_DAY_MS);
+
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3500);
+
+    const url = isNewVisit
+      ? 'https://counterapi.com/api/dutta-webapps.com/view/site-visits'
+      : 'https://counterapi.com/api/dutta-webapps.com/view/site-visits?readOnly=true';
+
+    const res = await fetch(url, {
+      method: 'GET',
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+
+    if (res.ok) {
+      const data = await res.json();
+      if (data && typeof data.value === 'number') {
+        const totalCount = data.value + BASE_OFFSET;
+        localStorage.setItem(CACHE_KEY, totalCount.toString());
+        localStorage.setItem(LAST_VISIT_KEY, now.toString());
+        updateDisplay(totalCount);
+        return;
+      }
+    }
+  } catch (err) {
+    console.warn('Visitor counter API unreachable, using local fallback:', err);
+  }
+
+  // Graceful fallback if external API is unreachable or blocked
+  let fallbackCount = cached ? parseInt(cached, 10) : BASE_OFFSET + 1;
+  if (isNewVisit && cached) {
+    fallbackCount += 1;
+    localStorage.setItem(LAST_VISIT_KEY, now.toString());
+  }
+  localStorage.setItem(CACHE_KEY, fallbackCount.toString());
+  updateDisplay(fallbackCount);
 }
 
 // Fetch Data from Backend API or Fallbacks

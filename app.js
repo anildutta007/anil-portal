@@ -110,51 +110,75 @@ const FALLBACK_APPS = [
   },
   {
     id: "zodiac-compatibility",
-    title: "ZodiacMatch AI — Sun Sign Compatibility",
-    tagline: "Couple & Singles Tropical Astrological Synergy Matrix",
-    category: "Astrology & Lifestyle",
-    badge: "Cosmic AI",
+    title: "ZodiacMatch AI & Synastry Matrix",
+    tagline: "Sun Sign, Birth Date & Linda Goodman Synastry Matrix",
+    category: "Culture & Lifestyle",
+    badge: "Astrology Synastry",
     status: "Production Ready",
     port: 8085,
-    liveUrl: "#",
+    liveUrl: "https://zodiac-compatibility-three.vercel.app/",
     localUrl: "http://127.0.0.1:8085",
-    summary: "Comprehensive Sun sign compatibility system for married couples and singles with 6 deep relationship parameters, Green-Amber-Red spectrum scoring, and element dynamics.",
+    summary: "Astrological synastry platform evaluating couples and singles using Linda Goodman harmonic vibrations and 6 deep compatibility dimensions.",
     highlightsHeader: "Key Highlights:",
     highlights: [
-      "**DOB to Sun Sign Engine:** Derives exact Tropical sun signs automatically from birth dates.",
-      "**Couples & Singles Dual Mode:** Full 144-pairing matrix for married couples plus ranked 12-sign matches for singles.",
-      "**Green-Amber-Red Spectrum:** High, moderate, and challenging affinity grading across 6 vital relationship parameters."
+      "**6 Synastry Vectors:** Analyzes emotional harmony, physical chemistry, intellect, shared values, and conflict resolution.",
+      "**Linda Goodman Harmonic Vibrations:** Models cosmic patterns (1-1 to 7-7), karmic lessons, and polar attraction.",
+      "**12x12 Compatibility Matrix:** Color-coded Green-Amber-Red synastry spectrum with tailored marital advice."
     ],
-    techStack: ["JavaScript", "Python Server", "Tailwind CSS", "Chart.js"],
+    techStack: ["JavaScript", "HTML5", "Tailwind CSS", "Synastry Engine"],
     batFile: "run_zodiac_compatibility.bat",
     icon: "sparkles",
     accentColor: "from-purple-600 to-pink-600",
-    statLabel: "Aspect Matrix",
-    statValue: "144 Combinations"
+    statLabel: "Synastry Model",
+    statValue: "12x12 Matrix"
   },
   {
     id: "world-news-map",
-    title: "World News Map — Cartographic Intelligence",
-    tagline: "Interactive World Map with Top 5 News & Deep Dives",
-    category: "Global News & Media",
-    badge: "World Map Pulse",
+    title: "World News Map & Global Intelligence",
+    tagline: "Interactive Cartographic News & Country Briefings",
+    category: "News & Global",
+    badge: "World Cartography",
     status: "Production Ready",
-    port: 8090,
-    liveUrl: "#",
-    localUrl: "http://127.0.0.1:8090",
-    summary: "Interactive world cartography web-app. Click any sovereign country to reveal top 5 news summaries across Economics, Business, Politics, Sports, and Food with audio narration and deep dive reports.",
+    port: 8092,
+    liveUrl: "https://world-news-map-orpin.vercel.app/",
+    localUrl: "http://127.0.0.1:8092",
+    summary: "Interactive cartographic news platform allowing users to click any nation on a dynamic world map to inspect real-time regional developments.",
     highlightsHeader: "Key Highlights:",
     highlights: [
-      "**Interactive World Cartography:** 190+ sovereign countries with hover tooltips, capital radar pins, and smooth camera zoom.",
-      "**Top 5 News by Topic:** Instant filtering across Economics, Business, Politics, Sports, Food, or ALL.",
-      "**Summaries & 'See More' Deep Dives:** Concise on-map summary deck, text-to-speech audio reader, and full reader modal."
+      "**Interactive Country Map:** Clickable vector world map powered by Leaflet with instant country profile detection.",
+      "**5 Curated Verticals:** Real-time briefings across Economics, Business, Politics, Sports, and Culture.",
+      "**Deep-Dive Country Briefings:** Detailed intelligence modals with sentiment indicators, key metrics, and source links."
     ],
-    techStack: ["Leaflet.js", "Python Server", "Tailwind CSS", "Web Speech API"],
+    techStack: ["Python", "Leaflet.js", "GeoJSON", "Tailwind CSS"],
     batFile: "run_world_news.bat",
     icon: "globe",
-    accentColor: "from-cyan-600 to-blue-600",
+    accentColor: "from-sky-600 to-indigo-600",
     statLabel: "Global Coverage",
-    statValue: "190+ Nations"
+    statValue: "190+ Countries"
+  },
+  {
+    id: "seep-game",
+    title: "SEEP (सीप) - Punjabi Card Game",
+    tagline: "Authentic 4-Player North Indian Partnership Strategy",
+    category: "Culture & Games",
+    badge: "Card Strategy",
+    status: "Production Ready",
+    port: 8000,
+    liveUrl: "https://seep-game-inky.vercel.app/",
+    localUrl: "http://127.0.0.1:8000",
+    summary: "Traditional 4-player Punjabi partnership card game played with a 52-card deck, featuring authentic bidding, house building, and 100-point Baazi matches.",
+    highlightsHeader: "Key Highlights:",
+    highlights: [
+      "**Authentic Partnership Rules:** 2 vs 2 strategy tracking point cards: Spades (1 pt), Aces (1 pt), and 10 of Diamonds (6 pts).",
+      "**House Building & Sweeps:** Build and pick up houses (9–12), cement builds with pairs, and score 50-point Seep sweeps.",
+      "**Intelligent AI Engine:** Play with and against smart AI partners with automated turn flow and sound effects."
+    ],
+    techStack: ["JavaScript", "HTML5 Canvas", "Web Audio API", "Card Engine"],
+    batFile: "run_seep_game.bat",
+    icon: "gamepad-2",
+    accentColor: "from-amber-600 to-red-600",
+    statLabel: "Match Format",
+    statValue: "100-Pt Baazi"
   }
 ];
 

@@ -107,6 +107,54 @@ const FALLBACK_APPS = [
     accentColor: "from-indigo-600 to-blue-600",
     statLabel: "Statutory Schedule",
     statValue: "35 Conditions"
+  },
+  {
+    id: "zodiac-compatibility",
+    title: "ZodiacMatch AI — Sun Sign Compatibility",
+    tagline: "Couple & Singles Tropical Astrological Synergy Matrix",
+    category: "Astrology & Lifestyle",
+    badge: "Cosmic AI",
+    status: "Production Ready",
+    port: 8085,
+    liveUrl: "#",
+    localUrl: "http://127.0.0.1:8085",
+    summary: "Comprehensive Sun sign compatibility system for married couples and singles with 6 deep relationship parameters, Green-Amber-Red spectrum scoring, and element dynamics.",
+    highlightsHeader: "Key Highlights:",
+    highlights: [
+      "**DOB to Sun Sign Engine:** Derives exact Tropical sun signs automatically from birth dates.",
+      "**Couples & Singles Dual Mode:** Full 144-pairing matrix for married couples plus ranked 12-sign matches for singles.",
+      "**Green-Amber-Red Spectrum:** High, moderate, and challenging affinity grading across 6 vital relationship parameters."
+    ],
+    techStack: ["JavaScript", "Python Server", "Tailwind CSS", "Chart.js"],
+    batFile: "run_zodiac_compatibility.bat",
+    icon: "sparkles",
+    accentColor: "from-purple-600 to-pink-600",
+    statLabel: "Aspect Matrix",
+    statValue: "144 Combinations"
+  },
+  {
+    id: "world-news-map",
+    title: "World News Map — Cartographic Intelligence",
+    tagline: "Interactive World Map with Top 5 News & Deep Dives",
+    category: "Global News & Media",
+    badge: "World Map Pulse",
+    status: "Production Ready",
+    port: 8090,
+    liveUrl: "#",
+    localUrl: "http://127.0.0.1:8090",
+    summary: "Interactive world cartography web-app. Click any sovereign country to reveal top 5 news summaries across Economics, Business, Politics, Sports, and Food with audio narration and deep dive reports.",
+    highlightsHeader: "Key Highlights:",
+    highlights: [
+      "**Interactive World Cartography:** 190+ sovereign countries with hover tooltips, capital radar pins, and smooth camera zoom.",
+      "**Top 5 News by Topic:** Instant filtering across Economics, Business, Politics, Sports, Food, or ALL.",
+      "**Summaries & 'See More' Deep Dives:** Concise on-map summary deck, text-to-speech audio reader, and full reader modal."
+    ],
+    techStack: ["Leaflet.js", "Python Server", "Tailwind CSS", "Web Speech API"],
+    batFile: "run_world_news.bat",
+    icon: "globe",
+    accentColor: "from-cyan-600 to-blue-600",
+    statLabel: "Global Coverage",
+    statValue: "190+ Nations"
   }
 ];
 

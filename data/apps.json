@@ -166,5 +166,29 @@
     "accentColor": "from-amber-600 to-red-600",
     "statLabel": "Match Format",
     "statValue": "100-Pt Baazi"
+  },
+  {
+    "id": "interval-reminder",
+    "title": "PulseRemind - Interval Alarms & Habits Hub",
+    "tagline": "Multilingual Voice Alarms, 37 Curated AI Tools & Indian Markets",
+    "category": "Productivity & Tools",
+    "badge": "Productivity Lab",
+    "status": "Production Ready",
+    "port": 8050,
+    "liveUrl": "https://interval-reminder-app.vercel.app/",
+    "localUrl": "http://127.0.0.1:8050",
+    "summary": "Automated recurring interval alarm and habit tracker with natural spoken voice reminders in English, Hindi, and Punjabi, alongside a 37-tool AI directory.",
+    "highlightsHeader": "Key Highlights:",
+    "highlights": [
+      "**Multilingual Voice Alarms:** Spoken interval alarms in English, Hindi (हिंदी), and Punjabi (ਪੰਜਾਬੀ) with customizable repeat frequencies.",
+      "**37 Curated AI Tools Suite:** Hand-picked master directory categorized across productivity, design, coding, research, and video generation.",
+      "**Indian Market Watch & Profiles:** Live tracking of 16 broad market and sectoral indices with multi-user profiles and celebration confetti."
+    ],
+    "techStack": ["JavaScript", "HTML5", "Web Speech API", "Tailwind CSS"],
+    "batFile": "run_reminder.bat",
+    "icon": "timer",
+    "accentColor": "from-teal-600 to-sky-600",
+    "statLabel": "Spoken Languages",
+    "statValue": "EN, HI & PA"
   }
 ]

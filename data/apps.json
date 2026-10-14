@@ -1,5 +1,29 @@
 [
   {
+    "id": "platform-advisor",
+    "title": "UK Investment Platform Advisor",
+    "tagline": "ISA, SIPP & Trading Account Fee Engine & Decision Advisor",
+    "category": "FinTech & Wealth",
+    "badge": "Platform Advisor",
+    "status": "Production Ready",
+    "port": 8070,
+    "liveUrl": "https://uk-platform-advisor.vercel.app/",
+    "localUrl": "http://127.0.0.1:8070",
+    "summary": "Impartial UK fee comparison and recommendation engine evaluating AJ Bell, Interactive Investor, Hargreaves Lansdown, Trading 212, Fidelity, and Vanguard across ISA, SIPP, and GIA accounts.",
+    "highlightsHeader": "Key Highlights:",
+    "highlights": [
+      "**6 Major UK Platforms Compared:** Granular fee models for AJ Bell, ii, HL, Trading 212, Fidelity, and Vanguard.",
+      "**Fee Crossover & Compounding Drag:** Live visual charts proving where flat fees beat percentage custody fees.",
+      "**Employer SIPP & Overseas FX Rules:** Critical suitability logic flagging company pension contribution and FX constraints."
+    ],
+    "techStack": ["Node.js / Python", "Tailwind CSS", "Chart.js", "Lucide Icons"],
+    "batFile": "run_platform_advisor.bat",
+    "icon": "compass",
+    "accentColor": "from-sky-600 to-blue-700",
+    "statLabel": "UK Platforms Evaluated",
+    "statValue": "6 Leading Providers"
+  },
+  {
     "id": "student-loan-calculator",
     "title": "UK University Fee & Student Loan Calculator",
     "tagline": "Plan 2, Plan 5 & Should Parents Pay Tuition? Simulator",

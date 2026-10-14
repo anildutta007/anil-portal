@@ -13,6 +13,30 @@ const state = {
 // Fallback data in case server API is offline or loaded via file:// protocol
 const FALLBACK_APPS = [
   {
+    id: "platform-advisor",
+    title: "UK Investment Platform Advisor",
+    tagline: "ISA, SIPP & Trading Account Fee Engine & Decision Advisor",
+    category: "FinTech & Wealth",
+    badge: "Platform Advisor",
+    status: "Production Ready",
+    port: 8070,
+    liveUrl: "https://uk-platform-advisor.vercel.app/",
+    localUrl: "http://127.0.0.1:8070",
+    summary: "Impartial UK fee comparison and recommendation engine evaluating AJ Bell, Interactive Investor, Hargreaves Lansdown, Trading 212, Fidelity, and Vanguard across ISA, SIPP, and GIA accounts.",
+    highlightsHeader: "Key Highlights:",
+    highlights: [
+      "**6 Major UK Platforms Compared:** Granular fee models for AJ Bell, ii, HL, Trading 212, Fidelity, and Vanguard.",
+      "**Fee Crossover & Compounding Drag:** Live visual charts proving where flat fees beat percentage custody fees.",
+      "**Employer SIPP & Overseas FX Rules:** Critical suitability logic flagging company pension contribution and FX constraints."
+    ],
+    techStack: ["Node.js / Python", "Tailwind CSS", "Chart.js", "Lucide Icons"],
+    batFile: "run_platform_advisor.bat",
+    icon: "compass",
+    accentColor: "from-sky-600 to-blue-700",
+    statLabel: "UK Platforms Evaluated",
+    statValue: "6 Leading Providers"
+  },
+  {
     id: "student-loan-calculator",
     title: "UK University Fee & Student Loan Calculator",
     tagline: "Plan 2, Plan 5 & Should Parents Pay Tuition? Simulator",
@@ -503,6 +527,61 @@ function closeLegalModal() {
 window.openLegalModal = openLegalModal;
 window.closeLegalModal = closeLegalModal;
 
+// ================= TIP THE DEVELOPER (MONZO PAY) CONTROLS =================
+let currentTipAmount = 1;
+const MONZO_USERNAME = 'anildutta';
+
+function selectTipAmount(amount) {
+  currentTipAmount = amount === 2 ? 2 : 1;
+  const btn1 = document.getElementById('tip-btn-1');
+  const btn2 = document.getElementById('tip-btn-2');
+  const monzoBtn = document.getElementById('tip-monzo-btn');
+  const displayAmount = document.getElementById('tip-display-amount');
+
+  if (btn1 && btn2) {
+    if (currentTipAmount === 1) {
+      btn1.className = 'tip-chip p-3.5 rounded-2xl border-2 border-amber-500 bg-amber-50 dark:bg-amber-950/40 text-amber-950 dark:text-amber-200 font-bold text-xs sm:text-sm flex flex-col items-center justify-center transition cursor-pointer shadow-xs';
+      btn2.className = 'tip-chip p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-600 bg-slate-50 dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm flex flex-col items-center justify-center transition cursor-pointer';
+    } else {
+      btn1.className = 'tip-chip p-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-600 bg-slate-50 dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm flex flex-col items-center justify-center transition cursor-pointer';
+      btn2.className = 'tip-chip p-3.5 rounded-2xl border-2 border-amber-500 bg-amber-50 dark:bg-amber-950/40 text-amber-950 dark:text-amber-200 font-bold text-xs sm:text-sm flex flex-col items-center justify-center transition cursor-pointer shadow-xs';
+    }
+  }
+
+  if (displayAmount) {
+    displayAmount.textContent = `£${currentTipAmount}.00`;
+  }
+
+  if (monzoBtn) {
+    const note = encodeURIComponent('Tip for Anil Dutta Web Apps');
+    monzoBtn.href = `https://monzo.me/${MONZO_USERNAME}/${currentTipAmount}?d=${note}`;
+  }
+}
+
+function openTipModal() {
+  trackEvent('open_tip_modal');
+  const modal = document.getElementById('tip-modal');
+  if (modal) {
+    selectTipAmount(1); // Default to £1
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    lucide.createIcons();
+  }
+}
+
+function closeTipModal() {
+  const modal = document.getElementById('tip-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}
+
+// Expose tip functions globally for HTML onclick handlers
+window.openTipModal = openTipModal;
+window.closeTipModal = closeTipModal;
+window.selectTipAmount = selectTipAmount;
+
 // ================= EVENT LISTENERS =================
 function initEventListeners() {
   // Theme Toggle
@@ -518,17 +597,22 @@ function initEventListeners() {
     });
   }
 
-  // Legal Modal Backdrop & Keyboard handling
+  // Modals Backdrop & Keyboard handling
   window.addEventListener('click', (e) => {
-    const modal = document.getElementById('legal-modal');
-    if (modal && e.target === modal) {
+    const legalModal = document.getElementById('legal-modal');
+    if (legalModal && e.target === legalModal) {
       closeLegalModal();
+    }
+    const tipModal = document.getElementById('tip-modal');
+    if (tipModal && e.target === tipModal) {
+      closeTipModal();
     }
   });
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeLegalModal();
+      closeTipModal();
     }
   });
 

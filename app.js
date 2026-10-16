@@ -227,6 +227,30 @@ const FALLBACK_APPS = [
     accentColor: "from-teal-600 to-sky-600",
     statLabel: "Spoken Languages",
     statValue: "EN, HI & PA"
+  },
+  {
+    id: "trip-expense-splitter",
+    title: "Dosti Pakki Expense Apna Apna",
+    tagline: "Group Trip Expense Splitter & AI Receipt Scanner",
+    category: "Productivity & Tools",
+    badge: "Group Expenses",
+    status: "Production Ready",
+    port: 8080,
+    liveUrl: "https://trip-expense-splitter-theta.vercel.app/",
+    localUrl: "http://127.0.0.1:8080",
+    summary: "Smart group trip expense splitter featuring camera snapshot capture, AI receipt scanning, fewest-payment debt settlement, and CSV spreadsheet export.",
+    highlightsHeader: "Key Highlights:",
+    highlights: [
+      "**Fewest-Payment Settle-Up:** Minimizes transaction count so friends settle balances with the least possible number of transfers.",
+      "**AI Receipt Scanner:** Extracts bill totals, vendor descriptions, categories, and dates from photos and PDFs automatically.",
+      "**Multi-Member Split & CSV Export:** Customizable unequal/equal splits, camera snapshot uploads, and one-click spreadsheet download."
+    ],
+    techStack: ["JavaScript", "Node.js / Python", "Gemini Vision AI", "Tailwind CSS"],
+    batFile: "run_trip_splitter.bat",
+    icon: "receipt",
+    accentColor: "from-violet-600 to-indigo-600",
+    statLabel: "Settlement Algorithm",
+    statValue: "Fewest Transfers"
   }
 ];
 

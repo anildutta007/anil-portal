@@ -551,7 +551,7 @@ function closeLegalModal() {
 window.openLegalModal = openLegalModal;
 window.closeLegalModal = closeLegalModal;
 
-// ================= TIP THE DEVELOPER (MONZO PAY) CONTROLS =================
+// ================= SUPPORT THE DEVELOPER (MONZO PAY) CONTROLS =================
 let currentTipAmount = 1;
 const MONZO_USERNAME = 'anildutta';
 
@@ -577,7 +577,7 @@ function selectTipAmount(amount) {
   }
 
   if (monzoBtn) {
-    const note = encodeURIComponent('Tip for Anil Dutta Web Apps');
+    const note = encodeURIComponent('Support Anil Dutta Web Apps');
     monzoBtn.href = `https://monzo.me/${MONZO_USERNAME}/${currentTipAmount}?d=${note}`;
   }
 }

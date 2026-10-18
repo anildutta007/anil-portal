@@ -286,5 +286,29 @@
     "accentColor": "from-violet-600 to-indigo-600",
     "statLabel": "Settlement Algorithm",
     "statValue": "Fewest Transfers"
+  },
+  {
+    "id": "travel-globe-planner",
+    "title": "AeroGlobe AI - 3D Travel Globe & Trip Planner",
+    "tagline": "Interactive 3D World Globe, Weather Explorer & AI Trip Architect",
+    "category": "Productivity & Tools",
+    "badge": "3D Travel Planner",
+    "status": "Production Ready",
+    "port": 8098,
+    "liveUrl": "https://travel-globe-planner.vercel.app/",
+    "localUrl": "http://127.0.0.1:8098",
+    "summary": "Interactive 3D WebGL world globe and travel cost estimator filtering destinations by temperature, month, flight + hotel budget, and instant AI itineraries.",
+    "highlightsHeader": "Key Highlights:",
+    "highlights": [
+      "**Interactive 3D Globe & 2D Map:** Rotate and zoom WebGL Earth with glowing destination pins, temperature filters, and continent jumps.",
+      "**Flight & Accommodation Estimator:** Calculates total costs for 5★, 4★, 3★ hotels and Airbnbs with return flights across global hubs.",
+      "**AI Trip Architect & Booking:** Generates day-by-day itineraries tailored to weather and local gastronomy with direct booking links."
+    ],
+    "techStack": ["Three.js", "Globe.gl", "Leaflet", "Tailwind CSS", "AI Architect"],
+    "batFile": "run_travel_globe.bat",
+    "icon": "plane",
+    "accentColor": "from-cyan-500 to-blue-600",
+    "statLabel": "Destination Search",
+    "statValue": "Global 3D Earth"
   }
 ]

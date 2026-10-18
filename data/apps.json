@@ -96,6 +96,54 @@
     "statValue": "6 Global Indices"
   },
   {
+    "id": "magazine-share-tracker",
+    "title": "Magazine Share Tracker & AI Research Hub",
+    "tagline": "Investment Reading Companion, Broker Consensus & AI Agent Verdict",
+    "category": "FinTech & Wealth",
+    "badge": "Stock Research",
+    "status": "Production Ready",
+    "port": 8094,
+    "liveUrl": "https://magazine-share-tracker.vercel.app/",
+    "localUrl": "http://127.0.0.1:8094",
+    "summary": "Log shares discovered in investment magazines and newspapers with instant Sector, Exchange, Index membership, Major Broker Consensus, and AI buy/hold verdict.",
+    "highlightsHeader": "Key Highlights:",
+    "highlights": [
+      "**Instant Ticker & Index Lookup:** Auto-retrieves Sector, Exchange, and Index membership across FTSE 100/250, AIM, and S&P 500.",
+      "**Major Broker Consensus:** Pulls Wall Street & City broker Buy/Hold/Sell ratings, price targets, and market sentiment.",
+      "**AI Research Agent Verdict:** Evaluates news catalysts and fundamentals to generate automated investment verdicts and summaries."
+    ],
+    "techStack": ["JavaScript", "AI Research Agent", "Tailwind CSS", "Lucide Icons"],
+    "batFile": "run_magazine_tracker.bat",
+    "icon": "newspaper",
+    "accentColor": "from-rose-600 to-pink-600",
+    "statLabel": "Market Coverage",
+    "statValue": "UK, US & Global"
+  },
+  {
+    "id": "uk-passive-tracker-indexes",
+    "title": "UK Passive Tracker Indexes & Top 5 Alpha Funds",
+    "tagline": "12 UK-Investable Benchmarks & 20-Year Return Matrix vs 60 Alpha Funds",
+    "category": "FinTech & Wealth",
+    "badge": "Index & Alpha Lab",
+    "status": "Production Ready",
+    "port": 8096,
+    "liveUrl": "https://uk-passive-tracker-indexes.vercel.app/",
+    "localUrl": "http://127.0.0.1:8096",
+    "summary": "Comprehensive directory of 12 UK-investable passive tracker indexes comparing 20-year annual returns against 60 outperforming active funds and investment trusts.",
+    "highlightsHeader": "Key Highlights:",
+    "highlights": [
+      "**12 UK Benchmark Indexes:** 20-year annual percentage returns (2006–2025 + 2026 YTD) across S&P 500, NASDAQ-100, FTSE, Global, and Tech.",
+      "**Top 5 Outperforming Funds:** Ranks 60 index-beating active OEICs, investment trusts, and factor ETFs net of ongoing charges (OCF).",
+      "**Cheapest Tracker Guide:** Recommends lowest-fee ISA/SIPP tracker funds and ETFs from Vanguard, iShares, Fidelity, HSBC, and Invesco."
+    ],
+    "techStack": ["JavaScript", "Chart.js", "Tailwind CSS", "Lucide Icons"],
+    "batFile": "run_passive_trackers.bat",
+    "icon": "bar-chart-3",
+    "accentColor": "from-emerald-600 to-teal-700",
+    "statLabel": "Benchmark Indexes",
+    "statValue": "12 Indexes & 60 Funds"
+  },
+  {
     "id": "landlord-licensing",
     "title": "UK Landlord & Tenant Compliance Hub",
     "tagline": "Selective Licensing, HMO Standards & Statutory Legal Notices",

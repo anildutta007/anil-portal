@@ -310,5 +310,29 @@
     "accentColor": "from-cyan-500 to-blue-600",
     "statLabel": "Destination Search",
     "statValue": "Global 3D Earth"
+  },
+  {
+    "id": "ai-exercise-coach",
+    "title": "FitPose AI - Real-Time Exercise Coach",
+    "tagline": "Computer Vision Pose Tracking, Rep Counting & Audio Form Feedback",
+    "category": "Health & Fitness",
+    "badge": "AI Motion Coach",
+    "status": "Production Ready",
+    "port": 8055,
+    "liveUrl": "https://ai-exercise-coach-eight.vercel.app/",
+    "localUrl": "http://127.0.0.1:8055",
+    "summary": "Browser-based computer vision fitness coach analyzing squats, push-ups, bicep curls, jumping jacks, and planks with real-time rep counting and voice form feedback.",
+    "highlightsHeader": "Key Highlights:",
+    "highlights": [
+      "**MediaPipe 33-Point Pose Tracking:** 100% in-browser computer vision tracking joint landmarks via WebGL and WASM.",
+      "**Real-Time Joint Angles & Rep Counting:** Automatic inflection angle calculations for knee, elbow, and spine with live accuracy scoring.",
+      "**Spoken Audio Coaching & Tutorials:** Instant voice posture guidance and YouTube video form tutorials to prevent training injuries."
+    ],
+    "techStack": ["React", "MediaPipe AI", "WebGL / WASM", "Tailwind CSS", "Speech API"],
+    "batFile": "run_exercise_coach.bat",
+    "icon": "activity",
+    "accentColor": "from-emerald-500 to-cyan-500",
+    "statLabel": "Supported Exercises",
+    "statValue": "5 Core Movements"
   }
 ]
